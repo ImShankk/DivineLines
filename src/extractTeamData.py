@@ -25,8 +25,6 @@ def extract_team_data(output_path: str = "../data/raw/nba_teams.csv") -> None:
     teams_df.to_csv(output_path, index=False)
 
     print(f"Success! {len(teams_df)} NBA teams saved to {output_path}")
-    print("\nSample Data:")
-    print(teams_df[["id", "full_name", "abbreviation"]].head())
 
 
 if __name__ == "__main__":
