@@ -17,52 +17,44 @@ def load_csv_to_db(
     """
     print("DivineLines: Initializing Data Loading Protocol...")
 
-    # Connect to the database
     conn = sqlite3.connect(db_path)
 
     try:
-        # --- 1. Load Teams ---
-        print("-> Loading Teams...")
+        # 1. Load Teams & Players (Use 'REPLACE' so they stay updated but don't duplicate)
         teams_df = pd.read_csv(os.path.join(data_dir, "nba_teams.csv"))
-        # if_exists="append" adds the data to our existing schema without overwriting it
-        teams_df.to_sql("teams", conn, if_exists="append", index=False)
-        print(f"   [SUCCESS] {len(teams_df)} teams loaded.")
+        teams_df.to_sql("teams", conn, if_exists="replace", index=False)
 
-        # --- 2. Load Players ---
-        print("-> Loading Players...")
         players_df = pd.read_csv(os.path.join(data_dir, "nba_players.csv"))
-        players_df.to_sql("players", conn, if_exists="append", index=False)
-        print(f"   [SUCCESS] {len(players_df)} players loaded.")
+        players_df.to_sql("players", conn, if_exists="replace", index=False)
 
-        # --- 3. Load All Game Logs ---
-        print("-> Loading Game Logs...")
-        # Find every CSV file that starts with "nba_games_"
+        # 2. Load Game Logs using an "INSERT OR IGNORE" strategy
         game_files = glob.glob(os.path.join(data_dir, "nba_games_*.csv"))
 
-        total_games = 0
         for file in game_files:
-            season_name = (
-                os.path.basename(file).replace("nba_games_", "").replace(".csv", "")
+            print(f"-> Processing {os.path.basename(file)}...")
+            df = pd.read_csv(file)
+
+            # Create a temporary table to hold the new data
+            df.to_sql("temp_game_logs", conn, if_exists="replace", index=False)
+
+            # Use SQL to move data from TEMP to the MAIN table, skipping duplicates
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO game_logs 
+                SELECT * FROM temp_game_logs
+            """
             )
-            print(f"   Loading season: {season_name}...")
 
-            games_df = pd.read_csv(file)
-            games_df.to_sql("game_logs", conn, if_exists="append", index=False)
-            total_games += len(games_df)
+            # Drop the temp table
+            conn.execute("DROP TABLE temp_game_logs")
+            conn.commit()
 
-        print(f"   [SUCCESS] {total_games} total game records loaded.")
+        print("[SUCCESS] Database synchronized. No duplicates created.")
 
-    except sqlite3.IntegrityError as e:
-        print(f"\n[WARNING] Data Integrity Error: {e}")
-        print(
-            "Tip: This usually means the data is already in the database. "
-            "The Primary Keys prevent you from loading the same game twice!"
-        )
     except Exception as e:
-        print(f"\n[ERROR] Pipeline Failed: {e}")
+        print(f"[ERROR] Load failed: {e}")
     finally:
         conn.close()
-        print("\nDivineLines: Database loading complete.")
 
 
 if __name__ == "__main__":
