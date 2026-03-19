@@ -10,14 +10,10 @@ def train_divinelines_model(data_path: str) -> None:
     df = pd.read_csv(data_path)
 
     # 2. Define Features (The inputs) and Target (The answer key)
-    features = [
-        col
-        for col in df.columns
-        if col.startswith("ROLL_") or col.startswith("TREND_") or col == "DAYS_REST"
-    ]
+    features = [col for col in df.columns if col.startswith("DIFF_")]
 
     X = df[features]
-    y = df["WIN_TARGET"]
+    y = df["HOME_WIN_TARGET"]
 
     # 3. Chronological Train/Test Split
     # 80/20 split to ensure we're training on the past and testing on the future
@@ -31,9 +27,9 @@ def train_divinelines_model(data_path: str) -> None:
 
     # 4. Initialize the XGBoost Classifier
     model = xgb.XGBClassifier(
-        n_estimators=100,  # Number of decision trees
-        learning_rate=0.1,  # How fast the model learns
-        max_depth=4,  # How deep the trees go (prevents overthinking)
+        n_estimators=150,  # Number of decision trees (changed from 100)
+        learning_rate=0.05,  # How fast the model learns (changed from 0.1)
+        max_depth=5,  # How deep the trees go (prevents overthinking) (changed from 4)
         random_state=42,  # Ensures we get the same results every time we run it
     )
 
@@ -54,15 +50,13 @@ def train_divinelines_model(data_path: str) -> None:
     ).sort_values(by="Importance", ascending=False)
 
     print("--- Top 5 Most Important Features ---")
-    print(importance.head(5).to_string(index=False))
+    print(importance.to_string(index=False))
 
     # Save this so I dont have to retrain the model everytime
-    model_path = os.path.join("..", "data", "processed", "divinelines_v1.json")
+    model_path = os.path.join("..", "data", "processed", "divinelines_v2.json")
     model.save_model(model_path)
     print(f"\n[SUCCESS] Model saved to: {model_path}")
-    print(
-        "The AI is now ready to predict future games."
-    )  # As of right now the accuracy is 61.43% (profitable in the long run) but not good enough
+    print("The AI is now ready to predict future games.")  # (FIRST VERSION 61.43%)
 
 
 if __name__ == "__main__":
