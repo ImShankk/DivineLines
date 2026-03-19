@@ -49,7 +49,7 @@ def train_divinelines_model(data_path: str) -> None:
         {"Feature": features, "Importance": model.feature_importances_}
     ).sort_values(by="Importance", ascending=False)
 
-    print("--- Top 5 Most Important Features ---")
+    print("\n--- Top 5 Most Important Features ---")
     print(importance.to_string(index=False))
 
     # Save this so I dont have to retrain the model everytime
