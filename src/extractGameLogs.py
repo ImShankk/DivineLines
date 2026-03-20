@@ -48,6 +48,7 @@ if __name__ == "__main__":
         "2022-23",  # Training Data
         "2023-24",  # Training Data
         "2024-25",  # Backtesting Data
+        "2025-26",  # Live Season Data
     ]
 
     extract_multiple_seasons(target_seasons)

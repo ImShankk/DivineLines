@@ -22,7 +22,21 @@ def engineer_ml_features(db_path: str, output_path: str) -> None:
         team_df["WIN_BIN"] = team_df["WL"].apply(lambda x: 1 if x == "W" else 0)
 
         # 3. Create Multi-Window Rolling Features (Identity vs. Trend)
-        stats = ["PTS", "PLUS_MINUS", "FG_PCT", "TOV", "REB", "AST"]
+        stats = [
+            "PTS",
+            "PLUS_MINUS",
+            "FG_PCT",
+            "FG3_PCT",
+            "FT_PCT",
+            "REB",
+            "OREB",
+            "AST",
+            "TOV",
+            "STL",
+            "BLK",
+            "PF",
+            "WIN_BIN",
+        ]
 
         for stat in stats:
             # Slow Window (The Team's Identity - Last 10 Games)
@@ -79,7 +93,15 @@ def engineer_ml_features(db_path: str, output_path: str) -> None:
             "ROLL_10_PTS",
             "ROLL_10_PLUS_MINUS",
             "ROLL_10_FG_PCT",
+            "ROLL_10_FG3_PCT",
+            "ROLL_10_FT_PCT",
             "ROLL_10_REB",
+            "ROLL_10_OREB",
+            "ROLL_10_AST",
+            "ROLL_10_TOV",
+            "ROLL_10_STL",
+            "ROLL_10_BLK",
+            "ROLL_10_PF",
             "ROLL_10_WIN_PCT",
             "DAYS_REST",
         ]
@@ -88,6 +110,8 @@ def engineer_ml_features(db_path: str, output_path: str) -> None:
             matchups_df[f"DIFF_{feature}"] = (
                 matchups_df[f"{feature}_HOME"] - matchups_df[f"{feature}_AWAY"]
             )
+
+        matchups_df["H2H_WIN_PCT"] = 0.50
 
         # THE NEW TARGET
         # No longer predicting "Did this team win?".

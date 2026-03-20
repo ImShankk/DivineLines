@@ -10,7 +10,9 @@ def train_divinelines_model(data_path: str) -> None:
     df = pd.read_csv(data_path)
 
     # 2. Define Features (The inputs) and Target (The answer key)
-    features = [col for col in df.columns if col.startswith("DIFF_")]
+    features = [
+        col for col in df.columns if col.startswith("DIFF_") or col == "H2H_WIN_PCT"
+    ]
 
     X = df[features]
     y = df["HOME_WIN_TARGET"]
@@ -27,8 +29,8 @@ def train_divinelines_model(data_path: str) -> None:
 
     # 4. Initialize the XGBoost Classifier
     model = xgb.XGBClassifier(
-        n_estimators=150,  # Number of decision trees (changed from 100)
-        learning_rate=0.05,  # How fast the model learns (changed from 0.1)
+        n_estimators=200,  # Number of decision trees (changed from 100 then to 150)
+        learning_rate=0.03,  # How fast the model learns (changed from 0.1 then to 0.05)
         max_depth=5,  # How deep the trees go (prevents overthinking) (changed from 4)
         random_state=42,  # Ensures we get the same results every time we run it
     )
@@ -41,7 +43,7 @@ def train_divinelines_model(data_path: str) -> None:
 
     # 7. Test Accuracy
     accuracy = accuracy_score(y_test, predictions)
-    print(f"DivineLines V1 Accuracy: {accuracy * 100:.2f}%")
+    print(f"DivineLines V3 Accuracy: {accuracy * 100:.2f}%")
 
     # 8. What are the most important features?
     # Most likely to influence the model's predictions (e.g., recent momentum, points scored, etc.)
@@ -49,14 +51,16 @@ def train_divinelines_model(data_path: str) -> None:
         {"Feature": features, "Importance": model.feature_importances_}
     ).sort_values(by="Importance", ascending=False)
 
-    print("\n--- Top 5 Most Important Features ---")
+    print("\n--- Most Important Features ---")
     print(importance.to_string(index=False))
 
     # Save this so I dont have to retrain the model everytime
-    model_path = os.path.join("..", "data", "processed", "divinelines_v2.json")
+    model_path = os.path.join("..", "data", "processed", "divinelines_v3.json")
     model.save_model(model_path)
     print(f"\n[SUCCESS] Model saved to: {model_path}")
-    print("The AI is now ready to predict future games.")  # (FIRST VERSION 61.43%)
+    print(
+        "The AI is now ready to predict future games."
+    )  # (FIRST VERSION 61.43%) (SECOND VERSION 61.55%) (AS OF NOW 62.69% LFGGG)
 
 
 if __name__ == "__main__":
