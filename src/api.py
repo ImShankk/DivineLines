@@ -126,9 +126,8 @@ def get_prediction(matchup: Matchup):
         pred_df = pred_df[expected_cols]
 
         # 5. Execute Prediction
-        prob = xgb_model.predict_proba(pred_df)[0][
-            1
-        ]  # Probability of Class 1 (Home Win)
+        prob = float(xgb_model.predict_proba(pred_df)[0][1])  # forgot to make float
+        # Probability of Class 1 (Home Win)
         win_pct = round(prob * 100, 2)
 
         # Determine the favorite
