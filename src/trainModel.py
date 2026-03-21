@@ -1,7 +1,8 @@
 import pandas as pd
 import xgboost as xgb
 import os
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
 
 
 def train_divinelines_model(data_path: str) -> None:
@@ -27,40 +28,59 @@ def train_divinelines_model(data_path: str) -> None:
     print(f"-> Training on {len(X_train)} historical games...")
     print(f"-> Testing on {len(X_test)} unseen future games...\n")
 
-    # 4. Initialize the XGBoost Classifier
-    model = xgb.XGBClassifier(
-        n_estimators=200,  # Number of decision trees (changed from 100 then to 150)
-        learning_rate=0.03,  # How fast the model learns (changed from 0.1 then to 0.05)
-        max_depth=5,  # How deep the trees go (prevents overthinking) (changed from 4)
-        random_state=42,  # Ensures we get the same results every time we run it
+    # Thank you Green Code : https://www.youtube.com/watch?v=N4JDlSTMOck for the idea of tuning hyperparameters.
+    # 4. Set up the Grid Search Parameters
+    param_grid = {
+        "max_depth": [3, 4, 5, 6],
+        "learning_rate": [0.01, 0.03, 0.05, 0.1],
+        "n_estimators": [100, 200, 300],
+    }
+
+    # 5. Time-Series Cross Validation
+    tscv = TimeSeriesSplit(n_splits=3)
+
+    # 6. Initialize the Tuner
+    base_model = xgb.XGBClassifier(random_state=42)
+    grid_search = GridSearchCV(
+        estimator=base_model,
+        param_grid=param_grid,
+        cv=tscv,
+        scoring="accuracy",
+        verbose=1,
     )
 
-    # 5. Train
-    model.fit(X_train, y_train)
+    # 7. Execute the Grid Search on the Training Data
+    grid_search.fit(X_train, y_train)
 
-    # 6. Predict on the Test Set
-    predictions = model.predict(X_test)
+    # 8. Extract the Best Model
+    best_model = grid_search.best_estimator_
 
-    # 7. Test Accuracy
+    print("\n====================================")
+    print(" OPTIMAL HYPERPARAMETERS FOUND:")
+    print(f" Max Depth:     {grid_search.best_params_['max_depth']}")
+    print(f" Learning Rate: {grid_search.best_params_['learning_rate']}")
+    print(f" N Estimators:  {grid_search.best_params_['n_estimators']}")
+    print("====================================\n")
+
+    # 9. Test the optimized model on the test 20%
+    predictions = best_model.predict(X_test)
     accuracy = accuracy_score(y_test, predictions)
-    print(f"DivineLines V3 Accuracy: {accuracy * 100:.2f}%")
+    print(f"DivineLines V3 (Optimized) Accuracy: {accuracy * 100:.2f}%\n")
 
-    # 8. What are the most important features?
-    # Most likely to influence the model's predictions (e.g., recent momentum, points scored, etc.)
+    # 10. Feature Importance
     importance = pd.DataFrame(
-        {"Feature": features, "Importance": model.feature_importances_}
+        {"Feature": features, "Importance": best_model.feature_importances_}
     ).sort_values(by="Importance", ascending=False)
 
-    print("\n--- Most Important Features ---")
-    print(importance.to_string(index=False))
+    print("--- Top 7 Most Important Features ---")
+    print(importance.head(7).to_string(index=False))
 
-    # Save this so I dont have to retrain the model everytime
-    model_path = os.path.join("..", "data", "processed", "divinelines_v3.json")
-    model.save_model(model_path)
-    print(f"\n[SUCCESS] Model saved to: {model_path}")
-    print(
-        "The AI is now ready to predict future games."
-    )  # (FIRST VERSION 61.43%) (SECOND VERSION 61.55%) (AS OF NOW 62.69% LFGGG)
+    # 11. Save the Optimized Brain
+    model_path = os.path.join(
+        "..", "data", "processed", "divinelines_v3_optimized.json"
+    )
+    best_model.save_model(model_path)
+    print(f"\n[SUCCESS] Optimized Model saved to: {model_path}")
 
 
 if __name__ == "__main__":
