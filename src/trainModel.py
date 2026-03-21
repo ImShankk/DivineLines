@@ -12,7 +12,9 @@ def train_divinelines_model(data_path: str) -> None:
 
     # 2. Define Features (The inputs) and Target (The answer key)
     features = [
-        col for col in df.columns if col.startswith("DIFF_") or col == "H2H_WIN_PCT"
+        col
+        for col in df.columns
+        if col.startswith("DIFF_") or col.endswith("_ADVANTAGE") or col == "H2H_WIN_PCT"
     ]
 
     X = df[features]

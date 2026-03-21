@@ -24,12 +24,28 @@ def sync_database():
         os.makedirs(os.path.dirname(db_path), exist_ok=True)
         conn = sqlite3.connect(db_path)
 
-        # 3. Overwrite the old table with the completely up-to-date data
-        df.to_sql("game_logs", conn, if_exists="replace", index=False)
-        conn.close()
+        df.to_sql("game_logs", conn, if_exists="append", index=False)
+
+        # Remove duplicates
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            DELETE FROM game_logs 
+            WHERE rowid NOT IN (
+                SELECT MIN(rowid) 
+                FROM game_logs 
+                GROUP BY GAME_ID, TEAM_ID
+            )
+        """
+        )
+        conn.commit()
+
+        # 3. Verify the total size
+        cursor.execute("SELECT COUNT(*) FROM game_logs")
+        total_rows = cursor.fetchone()[0]
 
         print(
-            f"[SUCCESS] Database synced. Currently holding {len(df)} total game records."
+            f"[SUCCESS] Database synced. Currently holding {total_rows} total game records."
         )
 
     except Exception as e:
