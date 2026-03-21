@@ -3,11 +3,6 @@ import glob
 import pandas as pd
 import sqlite3
 
-import os
-import glob
-import sqlite3
-import pandas as pd
-
 
 def load_csv_to_db(
     db_path: str = "../data/processed/nba_data.db", data_dir: str = "../data/raw"

@@ -5,114 +5,47 @@ import os
 import time
 import sys
 
-
 try:
     from syncData import sync_database
 except ImportError:
     pass
 
 
-def get_latest_team_stats(db_path: str, team_abbr: str):
-    """Calculates the true current rolling averages for a team based on their last 10 games."""
-    conn = sqlite3.connect(db_path)
-    query = f"SELECT * FROM game_logs WHERE TEAM_ABBREVIATION = '{team_abbr}' ORDER BY GAME_DATE ASC"
-    df = pd.read_sql_query(query, conn)
-    conn.close()
-
-    if df.empty:
-        return None
-
-    df["GAME_DATE"] = pd.to_datetime(df["GAME_DATE"])
-    df["WIN_BIN"] = df["WL"].apply(lambda x: 1 if x == "W" else 0)
-
-    # Grab the absolute last 10 games for current form
-    last_10 = df.tail(10)
-
-    stats = {}
-
-    stats["ROLL_10_PTS"] = last_10["PTS"].mean()
-    stats["ROLL_10_PLUS_MINUS"] = last_10["PLUS_MINUS"].mean()
-    stats["ROLL_10_FG_PCT"] = last_10["FG_PCT"].mean()
-    stats["ROLL_10_FG3_PCT"] = last_10["FG3_PCT"].mean()
-    stats["ROLL_10_FT_PCT"] = last_10["FT_PCT"].mean()
-    stats["ROLL_10_REB"] = last_10["REB"].mean()
-    stats["ROLL_10_OREB"] = last_10["OREB"].mean()
-    stats["ROLL_10_AST"] = last_10["AST"].mean()
-    stats["ROLL_10_TOV"] = last_10["TOV"].mean()
-    stats["ROLL_10_STL"] = last_10["STL"].mean()
-    stats["ROLL_10_BLK"] = last_10["BLK"].mean()
-    stats["ROLL_10_PF"] = last_10["PF"].mean()
-    stats["ROLL_10_WIN_PCT"] = last_10["WIN_BIN"].mean()
-
-    # Calculate exact Days Rest
-    last_game_date = df.iloc[-1]["GAME_DATE"]
-    days_since_last_game = (pd.Timestamp.today() - last_game_date).days
-    stats["DAYS_REST"] = min(max(days_since_last_game, 0), 4)
-
-    return stats
-
-
-def get_h2h_win_pct(db_path: str, home_team: str, away_team: str):
-    """Calculates the historical head-to-head win percentage for the home team against the away team."""
-    conn = sqlite3.connect(db_path)
-    query = f"""
-        SELECT WL FROM game_logs 
-        WHERE TEAM_ABBREVIATION = '{home_team}' 
-        AND MATCHUP LIKE '%{away_team}%'
-        AND GAME_DATE >= '2025-10-01'
-    """
-    df = pd.read_sql_query(query, conn)
-    conn.close()
-
-    if df.empty:
-        return 0.50
-    return len(df[df["WL"] == "W"]) / len(df)
+# restarting this page, becuase i think i broke it :0
 
 
 def generate_explanation(home, away, diffs, home_prob):
     """Translates the mathematical differentials into a plain-English explanation."""
     favored = home if home_prob > 50 else away
-
     reasons = []
 
-    # If Home is favored, look for positive differentials. If Away is favored, look for negative.
     if home_prob > 50:
-        if diffs["DIFF_ROLL_10_PLUS_MINUS"] > 3.0:
+        if diffs.get("DIFF_NET_RATING", 0) > 3.0:
             reasons.append(
-                f"a vastly superior Net Rating (+{diffs['DIFF_ROLL_10_PLUS_MINUS']:.1f})"
+                f"a vastly superior Net Rating (+{diffs.get('DIFF_NET_RATING', 0):.1f})"
             )
-        elif diffs["DIFF_ROLL_10_PLUS_MINUS"] > 0.5:
+        elif diffs.get("DIFF_NET_RATING", 0) > 0.5:
             reasons.append(
-                f"a slight Net Rating edge (+{diffs['DIFF_ROLL_10_PLUS_MINUS']:.1f})"
+                f"a slight Net Rating edge (+{diffs.get('DIFF_NET_RATING', 0):.1f})"
             )
 
-        if diffs["DIFF_DAYS_REST"] > 0:
-            reasons.append(f"a {int(diffs['DIFF_DAYS_REST'])}-day rest advantage")
-
-        if diffs["DIFF_ROLL_10_REB"] > 2.0:
-            reasons.append(
-                f"dominance on the glass (+{diffs['DIFF_ROLL_10_REB']:.1f} reb/game)"
-            )
+        if diffs.get("HOME_3PT_ADVANTAGE", 0) > diffs.get("AWAY_3PT_ADVANTAGE", 0):
+            reasons.append("a distinct advantage exploiting the perimeter defense")
     else:
-        if diffs["DIFF_ROLL_10_PLUS_MINUS"] < -3.0:
+        if diffs.get("DIFF_NET_RATING", 0) < -3.0:
             reasons.append(
-                f"a vastly superior Net Rating (+{abs(diffs['DIFF_ROLL_10_PLUS_MINUS']):.1f})"
+                f"a vastly superior Net Rating (+{abs(diffs.get('DIFF_NET_RATING', 0)):.1f})"
             )
-        elif diffs["DIFF_ROLL_10_PLUS_MINUS"] < -0.5:
+        elif diffs.get("DIFF_NET_RATING", 0) < -0.5:
             reasons.append(
-                f"a slight Net Rating edge (+{abs(diffs['DIFF_ROLL_10_PLUS_MINUS']):.1f})"
+                f"a slight Net Rating edge (+{abs(diffs.get('DIFF_NET_RATING', 0)):.1f})"
             )
 
-        if diffs["DIFF_DAYS_REST"] < 0:
-            reasons.append(f"a {abs(int(diffs['DIFF_DAYS_REST']))}-day rest advantage")
-
-        if diffs["DIFF_ROLL_10_REB"] < -2.0:
-            reasons.append(
-                f"dominance on the glass (+{abs(diffs['DIFF_ROLL_10_REB']):.1f} reb/game)"
-            )
+        if diffs.get("AWAY_3PT_ADVANTAGE", 0) > diffs.get("HOME_3PT_ADVANTAGE", 0):
+            reasons.append("a distinct advantage exploiting the perimeter defense")
 
     if not reasons:
-        return f"The matchup is quite close, but {favored} have the advantage based on the data."
+        return f"The matchup is quite close mathematically, but {favored} holds the historical data advantage."
 
     return (
         f"The winning team will likely be {favored} primarily due to "
@@ -127,20 +60,83 @@ def run_oracle():
         "..", "data", "processed", "divinelines_v3_optimized.json"
     )
 
+    os.system("cls" if os.name == "nt" else "clear")
+
     if not os.path.exists(model_path):
-        print("[ERROR] Model not found. Run train_model.py first")
+        print(f"[ERROR] Model not found at: {model_path}")
         input("\nPress Enter to return to menu...")
         return
 
-    print("Loading DivineLines")
-    model = xgb.Booster()
-    model.load_model(model_path)
+    print("Loading DivineLines V4 Brain...")
+    try:
+        model = xgb.XGBClassifier()
+        model.load_model(model_path)
+    except Exception as e:
+        print(f"\n[!] CRITICAL ERROR: Could not load the XGBoost model.")
+        print(f"Details: {e}")
+        input("\nPress Enter to return to menu...")
+        return
 
-    # Clear the terminal screen for a clean UI every time we run it
+    print(
+        "Loading Database and calculating V4 metrics... (This may take a few seconds)"
+    )
+    try:
+        conn = sqlite3.connect(db_path)
+        query = "SELECT * FROM game_logs ORDER BY GAME_DATE ASC"
+        raw_df = pd.read_sql_query(query, conn)
+        conn.close()
+
+        raw_df["GAME_DATE"] = pd.to_datetime(raw_df["GAME_DATE"])
+        raw_df.sort_values(by=["GAME_ID", "TEAM_ID"], inplace=True)
+
+        raw_df["POSS"] = (
+            raw_df["FGA"] - raw_df["OREB"] + raw_df["TOV"] + (0.44 * raw_df["FTA"])
+        )
+        raw_df["ORTG"] = (raw_df["PTS"] / raw_df["POSS"]) * 100
+        raw_df["POINT_DIFF"] = raw_df["PLUS_MINUS"]
+
+        raw_df["OPP_PTS"] = raw_df.groupby("GAME_ID")["PTS"].transform(
+            lambda x: x.iloc[::-1].values
+        )
+        raw_df["OPP_POSS"] = raw_df.groupby("GAME_ID")["POSS"].transform(
+            lambda x: x.iloc[::-1].values
+        )
+        raw_df["OPP_FG3A"] = raw_df.groupby("GAME_ID")["FG3A"].transform(
+            lambda x: x.iloc[::-1].values
+        )
+        raw_df["OPP_FG3M"] = raw_df.groupby("GAME_ID")["FG3M"].transform(
+            lambda x: x.iloc[::-1].values
+        )
+        raw_df["OPP_FTA"] = raw_df.groupby("GAME_ID")["FTA"].transform(
+            lambda x: x.iloc[::-1].values
+        )
+
+        raw_df["DRTG"] = (raw_df["OPP_PTS"] / raw_df["OPP_POSS"]) * 100
+        raw_df["NET_RATING"] = raw_df["ORTG"] - raw_df["DRTG"]
+        raw_df["OPP_FG3_PCT"] = raw_df.apply(
+            lambda row: row["OPP_FG3M"] / row["OPP_FG3A"] if row["OPP_FG3A"] > 0 else 0,
+            axis=1,
+        )
+        raw_df["WIN_BIN"] = raw_df["WL"].apply(lambda x: 1 if x == "W" else 0)
+    except Exception as e:
+        print(f"\n[!] CRITICAL ERROR: Failed to process database math.")
+        print(f"Details: {e}")
+        input("\nPress Enter to return to menu...")
+        return
+
+    def get_latest_stats(team_abbr):
+        team_data = (
+            raw_df[raw_df["TEAM_ABBREVIATION"] == team_abbr]
+            .sort_values(by="GAME_DATE")
+            .tail(10)
+        )
+        if team_data.empty:
+            return None
+        return team_data.mean(numeric_only=True)
+
     os.system("cls" if os.name == "nt" else "clear")
-
     print("=====================================================")
-    print("                 DIVINELINES V3.0                    ")
+    print("                DIVINELINES V4.0                     ")
     print("=====================================================")
     print("Type 'exit' or 'quit' at any time to close the app.\n")
 
@@ -154,13 +150,10 @@ def run_oracle():
             break
 
         print("\nChecking... \n")
-        time.sleep(
-            0.4
-        )  # Just a little dramatic pause for effect (dont need it but thought it would be funny)
+        time.sleep(0.4)
 
-        home_stats = get_latest_team_stats(db_path, home_team)
-        away_stats = get_latest_team_stats(db_path, away_team)
-        h2h_win_pct = get_h2h_win_pct(db_path, home_team, away_team)
+        home_stats = get_latest_stats(home_team)
+        away_stats = get_latest_stats(away_team)
 
         if home_stats is None or away_stats is None:
             print(
@@ -168,38 +161,36 @@ def run_oracle():
             )
             continue
 
-        # The V2 Alpha: Calculate the Differentials
-        diff_features = {
-            "DIFF_ROLL_10_PTS": home_stats["ROLL_10_PTS"] - away_stats["ROLL_10_PTS"],
-            "DIFF_ROLL_10_PLUS_MINUS": home_stats["ROLL_10_PLUS_MINUS"]
-            - away_stats["ROLL_10_PLUS_MINUS"],
-            "DIFF_ROLL_10_FG_PCT": home_stats["ROLL_10_FG_PCT"]
-            - away_stats["ROLL_10_FG_PCT"],
-            "DIFF_ROLL_10_FG3_PCT": home_stats["ROLL_10_FG3_PCT"]
-            - away_stats["ROLL_10_FG3_PCT"],
-            "DIFF_ROLL_10_FT_PCT": home_stats["ROLL_10_FT_PCT"]
-            - away_stats["ROLL_10_FT_PCT"],
-            "DIFF_ROLL_10_REB": home_stats["ROLL_10_REB"] - away_stats["ROLL_10_REB"],
-            "DIFF_ROLL_10_OREB": home_stats["ROLL_10_OREB"]
-            - away_stats["ROLL_10_OREB"],
-            "DIFF_ROLL_10_AST": home_stats["ROLL_10_AST"] - away_stats["ROLL_10_AST"],
-            "DIFF_ROLL_10_TOV": home_stats["ROLL_10_TOV"] - away_stats["ROLL_10_TOV"],
-            "DIFF_ROLL_10_STL": home_stats["ROLL_10_STL"] - away_stats["ROLL_10_STL"],
-            "DIFF_ROLL_10_BLK": home_stats["ROLL_10_BLK"] - away_stats["ROLL_10_BLK"],
-            "DIFF_ROLL_10_PF": home_stats["ROLL_10_PF"] - away_stats["ROLL_10_PF"],
-            "DIFF_ROLL_10_WIN_PCT": home_stats["ROLL_10_WIN_PCT"]
-            - away_stats["ROLL_10_WIN_PCT"],
-            "DIFF_DAYS_REST": home_stats["DAYS_REST"] - away_stats["DAYS_REST"],
-            "H2H_WIN_PCT": h2h_win_pct,
-        }
+        features = {}
+        features["DIFF_PACE"] = home_stats["POSS"] - away_stats["POSS"]
+        features["DIFF_NET_RATING"] = (
+            home_stats["NET_RATING"] - away_stats["NET_RATING"]
+        )
+        features["DIFF_POINT_MARGIN"] = (
+            home_stats["POINT_DIFF"] - away_stats["POINT_DIFF"]
+        )
 
-        matchup_df = pd.DataFrame([diff_features])
-        dmatrix = xgb.DMatrix(matchup_df)
+        features["HOME_3PT_ADVANTAGE"] = home_stats["FG3A"] * away_stats["OPP_FG3_PCT"]
+        features["AWAY_3PT_ADVANTAGE"] = away_stats["FG3A"] * home_stats["OPP_FG3_PCT"]
+        features["HOME_FT_ADVANTAGE"] = home_stats["FTA"] - away_stats["OPP_FTA"]
+        features["AWAY_FT_ADVANTAGE"] = away_stats["FTA"] - home_stats["OPP_FTA"]
 
-        home_win_prob = model.predict(dmatrix)[0] * 100
+        for stat in ["ORTG", "DRTG", "REB", "AST", "TOV", "WIN_BIN"]:
+            features[f"DIFF_ROLL_10_{stat}"] = home_stats[stat] - away_stats[stat]
+
+        features["H2H_WIN_PCT"] = 0.50
+
+        pred_df = pd.DataFrame([features])
+
+        expected_cols = model.get_booster().feature_names
+        for col in expected_cols:
+            if col not in pred_df.columns:
+                pred_df[col] = 0
+        pred_df = pred_df[expected_cols]
+
+        home_win_prob = model.predict_proba(pred_df)[0][1] * 100
         away_win_prob = 100 - home_win_prob
 
-        # Display the UI
         print("-" * 53)
         if home_win_prob > 50:
             print(
@@ -210,11 +201,10 @@ def run_oracle():
                 f"PREDICTION: {away_team} (AWAY) wins with {away_win_prob:.1f}% confidence."
             )
 
-        # Explain the reasoning
         explanation = generate_explanation(
-            home_team, away_team, diff_features, home_win_prob
+            home_team, away_team, features, home_win_prob
         )
-        print(f" ANALYSIS:\n{explanation}")
+        print(f" ANALYSIS:\n {explanation}")
         print("-" * 53 + "\n  \n")
 
 
@@ -222,10 +212,10 @@ def main_menu():
     while True:
         os.system("cls" if os.name == "nt" else "clear")
         print("=====================================================")
-        print("                 DIVINELINES V3.0                    ")
+        print("                DIVINELINES V4.0                     ")
         print("=====================================================")
         print(" [1] Sync Database (Fetch Last Night's Games)")
-        print(" [2] Launch Predictor Oracle (V3 Optimized)")
+        print(" [2] Launch Predictor Oracle (V4 Optimized)")
         print(" [3] Exit")
         print("=====================================================")
 
@@ -239,9 +229,6 @@ def main_menu():
                 print("\n[SUCCESS] Database is up to date.")
             except NameError:
                 print("[!] ERROR: Sync function not linked.")
-                print(
-                    "Open main.py and update the import statement at the top to point to your sync file."
-                )
             input("\nPress Enter to return to menu...")
 
         elif choice == "2":
