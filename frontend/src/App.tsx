@@ -17,6 +17,14 @@ const TEAM_NAMES: Record<string, string> = {
 
 const TEAMS = Object.keys(TEAM_NAMES);
 
+const StatHeader = ({ awayName, homeName }: any) => (
+    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.75rem', marginBottom: '0.75rem', borderBottom: '1px solid #404040' }}>
+        <div style={{ width: '35%', textAlign: 'center', color: '#E5E7EB', fontWeight: 'bold', fontSize: '0.85rem' }}>{awayName}</div>
+        <div style={{ width: '30%' }}></div>
+        <div style={{ width: '35%', textAlign: 'center', color: '#E5E7EB', fontWeight: 'bold', fontSize: '0.85rem' }}>{homeName}</div>
+    </div>
+);
+
 const StatRow = ({ label, awayVal, homeVal, lowerIsBetter = false, isPlusMinus = false }: any) => {
     const awayNum = Number(awayVal);
     const homeNum = Number(homeVal);
@@ -32,13 +40,13 @@ const StatRow = ({ label, awayVal, homeVal, lowerIsBetter = false, isPlusMinus =
 
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #262626' }}>
-            <div style={{ width: '30%', textAlign: 'center', color: awayBetter ? '#22C55E' : '#A3A3A3', fontWeight: awayBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
+            <div style={{ width: '35%', textAlign: 'center', color: awayBetter ? '#22C55E' : '#A3A3A3', fontWeight: awayBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
                 {formatVal(awayNum)}
             </div>
-            <div style={{ width: '40%', textAlign: 'center', color: '#737373', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', alignSelf: 'center' }}>
+            <div style={{ width: '30%', textAlign: 'center', color: '#737373', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', alignSelf: 'center' }}>
                 {label}
             </div>
-            <div style={{ width: '30%', textAlign: 'center', color: homeBetter ? '#22C55E' : '#A3A3A3', fontWeight: homeBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
+            <div style={{ width: '35%', textAlign: 'center', color: homeBetter ? '#22C55E' : '#A3A3A3', fontWeight: homeBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
                 {formatVal(homeNum)}
             </div>
         </div>
@@ -98,7 +106,7 @@ function App() {
                 onChange={(e) => setAwayTeam(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', backgroundColor: '#262626', color: '#FFFFFF', border: '1px solid #404040', borderRadius: '0.5rem', fontSize: '1rem', outline: 'none' }}
               >
-                {TEAMS.map(team => <option key={`away-${team}`} value={team}>{team}</option>)}
+                {TEAMS.map(team => <option key={`away-${team}`} value={team}>{TEAM_NAMES[team]}</option>)}
               </select>
             </div>
 
@@ -111,7 +119,7 @@ function App() {
                 onChange={(e) => setHomeTeam(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', backgroundColor: '#262626', color: '#FFFFFF', border: '1px solid #404040', borderRadius: '0.5rem', fontSize: '1rem', outline: 'none' }}
               >
-                {TEAMS.map(team => <option key={`home-${team}`} value={team}>{team}</option>)}
+                {TEAMS.map(team => <option key={`home-${team}`} value={team}>{TEAM_NAMES[team]}</option>)}
               </select>
             </div>
             
@@ -179,12 +187,32 @@ function App() {
                 <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #262626', textAlign: 'left' }}>
                     
                     {/* H2H Banner */}
+                {prediction.metrics.h2h_stats ? (
                     <div style={{ backgroundColor: '#0A0A0A', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #404040', marginBottom: '1.5rem', textAlign: 'center' }}>
                         <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', letterSpacing: '0.05em' }}>LAST HEAD-TO-HEAD</p>
                         <p style={{ color: '#E5E7EB', fontSize: '1.1rem', fontWeight: '600', margin: 0 }}>
                             {prediction.metrics.last_h2h}
                         </p>
+
+                        {/* H2H Stats Grid */}
+                        <StatHeader awayName={TEAM_NAMES[prediction.away_team]} homeName={TEAM_NAMES[prediction.home_team]} />
+                            
+                        <StatRow label="Points" awayVal={prediction.metrics.h2h_stats.away.pts} homeVal={prediction.metrics.h2h_stats.home.pts} />
+                        <StatRow label="Points Allowed" awayVal={prediction.metrics.h2h_stats.away.opp_pts} homeVal={prediction.metrics.h2h_stats.home.opp_pts} lowerIsBetter={true} />
+                        <StatRow label="3PT Made" awayVal={prediction.metrics.h2h_stats.away.fg3m} homeVal={prediction.metrics.h2h_stats.home.fg3m} />
+                        <StatRow label="Rebounds" awayVal={prediction.metrics.h2h_stats.away.reb} homeVal={prediction.metrics.h2h_stats.home.reb} />
+                        <StatRow label="Assists" awayVal={prediction.metrics.h2h_stats.away.ast} homeVal={prediction.metrics.h2h_stats.home.ast} />
+                        <StatRow label="Turnovers" awayVal={prediction.metrics.h2h_stats.away.tov} homeVal={prediction.metrics.h2h_stats.home.tov} lowerIsBetter={true} />
+                        <StatRow label="Fouls" awayVal={prediction.metrics.h2h_stats.away.pf} homeVal={prediction.metrics.h2h_stats.home.pf} lowerIsBetter={true} />
+                    
                     </div>
+                    ) : (
+                    <div style={{ backgroundColor: '#0A0A0A', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #404040', marginBottom: '1.5rem', textAlign: 'center' }}>
+                            <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', letterSpacing: '0.05em' }}>LAST HEAD-TO-HEAD</p>
+                            <p style={{ color: '#E5E7EB', fontSize: '1.1rem', fontWeight: '600', margin: 0 }}>No matchups yet this season.</p>
+                        </div>
+                    )}
+
 
                     {/* Tale of the Tape Grid */}
                     <div style={{ backgroundColor: '#0A0A0A', padding: '1.5rem', borderRadius: '0.5rem', border: '1px solid #404040' }}>
@@ -192,6 +220,8 @@ function App() {
                         
                         {/* We use the custom StatRow component to do the heavy lifting here */}
                         <StatRow label="Points" awayVal={prediction.metrics.away_stats.pts} homeVal={prediction.metrics.home_stats.pts} />
+                        <StatRow label="Points Allowed" awayVal={prediction.metrics.away_stats.opp_pts} homeVal={prediction.metrics.home_stats.opp_pts} lowerIsBetter={true} />
+                        <StatRow label="3PT Made" awayVal={prediction.metrics.away_stats.fg3m} homeVal={prediction.metrics.home_stats.fg3m} />
                         <StatRow label="Rebounds" awayVal={prediction.metrics.away_stats.reb} homeVal={prediction.metrics.home_stats.reb} />
                         <StatRow label="Assists" awayVal={prediction.metrics.away_stats.ast} homeVal={prediction.metrics.home_stats.ast} />
                         <StatRow label="Turnovers" awayVal={prediction.metrics.away_stats.tov} homeVal={prediction.metrics.home_stats.tov} lowerIsBetter={true} />

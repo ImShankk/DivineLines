@@ -147,18 +147,45 @@ def get_prediction(matchup: Matchup):
         ]
 
         last_h2h_str = "No matchups yet this season"
+        h2h_stats = None
+
         if not h2h_games.empty:
             last_game_id = h2h_games.iloc[-1]["GAME_ID"]
             game_rows = raw_df[raw_df["GAME_ID"] == last_game_id]
+
             if len(game_rows) == 2:
-                t1 = game_rows.iloc[0]
-                t2 = game_rows.iloc[1]
-                date_str = pd.to_datetime(t1["GAME_DATE"]).strftime("%b %d, %Y")
+                t_away = game_rows[game_rows["TEAM_ABBREVIATION"] == matchup.away].iloc[
+                    0
+                ]
+                t_home = game_rows[game_rows["TEAM_ABBREVIATION"] == matchup.home].iloc[
+                    0
+                ]
+                date_str = pd.to_datetime(t_away["GAME_DATE"]).strftime("%b %d, %Y")
                 # Format: "WINNER 110 - 105 LOSER (Date)"
-                if t1["PTS"] > t2["PTS"]:
-                    last_h2h_str = f"{t1['TEAM_ABBREVIATION']} {int(t1['PTS'])} - {int(t2['PTS'])} {t2['TEAM_ABBREVIATION']} ({date_str})"
+                if t_home["PTS"] > t_away["PTS"]:
+                    last_h2h_str = f"{t_home['TEAM_ABBREVIATION']} {int(t_home['PTS'])} - {int(t_away['PTS'])} {t_away['TEAM_ABBREVIATION']} ({date_str})"
                 else:
-                    last_h2h_str = f"{t2['TEAM_ABBREVIATION']} {int(t2['PTS'])} - {int(t1['PTS'])} {t1['TEAM_ABBREVIATION']} ({date_str})"
+                    last_h2h_str = f"{t_away['TEAM_ABBREVIATION']} {int(t_away['PTS'])} - {int(t_home['PTS'])} {t_home  ['TEAM_ABBREVIATION']} ({date_str})"
+
+                # Kind of like box scores
+                h2h_stats = {
+                    "away": {
+                        "pts": int(t_away["PTS"]),
+                        "reb": int(t_away["REB"]),
+                        "ast": int(t_away["AST"]),
+                        "fg3m": int(t_away["FG3M"]),
+                        "tov": int(t_away["TOV"]),
+                        "pf": int(t_away["PF"]),
+                    },
+                    "home": {
+                        "pts": int(t_home["PTS"]),
+                        "reb": int(t_home["REB"]),
+                        "ast": int(t_home["AST"]),
+                        "fg3m": int(t_home["FG3M"]),
+                        "tov": int(t_home["TOV"]),
+                        "pf": int(t_home["PF"]),
+                    },
+                }
 
         # better representation of the data (if possible trying to do players and injurires too)
         return {
@@ -168,6 +195,7 @@ def get_prediction(matchup: Matchup):
             "message": f"The model heavily favors {favorite} with a {fav_pct:.1f}% probability of winning.",
             "metrics": {
                 "last_h2h": last_h2h_str,
+                "h2h_stats": h2h_stats,
                 "away_stats": {
                     "pts": float(away_stats.get("PTS", 0)),
                     "reb": float(away_stats.get("REB", 0)),
