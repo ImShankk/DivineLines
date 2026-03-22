@@ -2,11 +2,48 @@ import { useState } from 'react';
 import axios from 'axios';
 import { AlertCircle, ChevronDown, ChevronUp, BarChart3 } from 'lucide-react'; 
 
-const TEAMS = [
-  "ATL", "BOS", "BKN", "CHA", "CHI", "CLE", "DAL", "DEN", "DET", "GSW",
-  "HOU", "IND", "LAC", "LAL", "MEM", "MIA", "MIL", "MIN", "NOP", "NYK",
-  "OKC", "ORL", "PHI", "PHX", "POR", "SAC", "SAS", "TOR", "UTA", "WAS"
-];
+const TEAM_NAMES: Record<string, string> = {
+  "ATL": "Atlanta Hawks", "BOS": "Boston Celtics", "BKN": "Brooklyn Nets",
+  "CHA": "Charlotte Hornets", "CHI": "Chicago Bulls", "CLE": "Cleveland Cavaliers",
+  "DAL": "Dallas Mavericks", "DEN": "Denver Nuggets", "DET": "Detroit Pistons",
+  "GSW": "Golden State Warriors", "HOU": "Houston Rockets", "IND": "Indiana Pacers",
+  "LAC": "LA Clippers", "LAL": "Los Angeles Lakers", "MEM": "Memphis Grizzlies",
+  "MIA": "Miami Heat", "MIL": "Milwaukee Bucks", "MIN": "Minnesota Timberwolves",
+  "NOP": "New Orleans Pelicans", "NYK": "New York Knicks", "OKC": "Oklahoma City Thunder",
+  "ORL": "Orlando Magic", "PHI": "Philadelphia 76ers", "PHX": "Phoenix Suns",
+  "POR": "Portland Trail Blazers", "SAC": "Sacramento Kings", "SAS": "San Antonio Spurs",
+  "TOR": "Toronto Raptors", "UTA": "Utah Jazz", "WAS": "Washington Wizards"
+};
+
+const TEAMS = Object.keys(TEAM_NAMES);
+
+const StatRow = ({ label, awayVal, homeVal, lowerIsBetter = false, isPlusMinus = false }: any) => {
+    const awayNum = Number(awayVal);
+    const homeNum = Number(homeVal);
+    
+    // Calculate who wins the stat category
+    const awayBetter = lowerIsBetter ? awayNum < homeNum : awayNum > homeNum;
+    const homeBetter = lowerIsBetter ? homeNum < awayNum : homeNum > awayNum;
+
+    const formatVal = (val: number) => {
+        if (isPlusMinus && val > 0) return `+${val.toFixed(1)}`;
+        return val.toFixed(1);
+    };
+
+    return (
+        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #262626' }}>
+            <div style={{ width: '30%', textAlign: 'center', color: awayBetter ? '#22C55E' : '#A3A3A3', fontWeight: awayBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
+                {formatVal(awayNum)}
+            </div>
+            <div style={{ width: '40%', textAlign: 'center', color: '#737373', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', alignSelf: 'center' }}>
+                {label}
+            </div>
+            <div style={{ width: '30%', textAlign: 'center', color: homeBetter ? '#22C55E' : '#A3A3A3', fontWeight: homeBetter ? 'bold' : 'normal', fontSize: '1.1rem' }}>
+                {formatVal(homeNum)}
+            </div>
+        </div>
+    );
+};
 
 function App() {
   const [homeTeam, setHomeTeam] = useState('BOS');
@@ -128,7 +165,6 @@ function App() {
                 <strong style={{ color: '#FFFFFF' }}>Analysis: </strong> {prediction.message}
             </div>
 
-            {/* THE NEW ADVANCED TOGGLE BUTTON */}
             <button 
                 onClick={() => setShowAdvanced(!showAdvanced)}
                 style={{ background: 'none', border: 'none', color: '#9CA3AF', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', fontWeight: '600' }}
@@ -138,24 +174,37 @@ function App() {
                 {showAdvanced ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
             </button>
 
-            {/* ADVANCED METRICS DROPDOWN */}
-            {showAdvanced && prediction.metrics && (
-                <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #262626', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'left' }}>
-                    <div style={{ backgroundColor: '#0A0A0A', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #404040' }}>
-                        <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 0.5rem 0' }}>NET RATING EDGE</p>
-                        <p style={{ color: prediction.metrics.net_rating_diff > 0 ? '#22C55E' : '#EF4444', fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>
-                            {prediction.metrics.net_rating_diff > 0 ? '+' : ''}{prediction.metrics.net_rating_diff}
+            {/* --- NEW: The Advanced Metrics Dropdown using the new Python payload --- */}
+            {showAdvanced && prediction.metrics && prediction.metrics.away_stats && (
+                <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #262626', textAlign: 'left' }}>
+                    
+                    {/* H2H Banner */}
+                    <div style={{ backgroundColor: '#0A0A0A', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #404040', marginBottom: '1.5rem', textAlign: 'center' }}>
+                        <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', letterSpacing: '0.05em' }}>LAST HEAD-TO-HEAD</p>
+                        <p style={{ color: '#E5E7EB', fontSize: '1.1rem', fontWeight: '600', margin: 0 }}>
+                            {prediction.metrics.last_h2h}
                         </p>
-                        <p style={{ color: '#525252', fontSize: '0.8rem', marginTop: '0.25rem' }}>Home vs Away</p>
                     </div>
 
-                    <div style={{ backgroundColor: '#0A0A0A', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #404040' }}>
-                        <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 0.5rem 0' }}>PACE DIFFERENTIAL</p>
-                        <p style={{ color: '#38BDF8', fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>
-                            {prediction.metrics.pace_diff > 0 ? '+' : ''}{prediction.metrics.pace_diff}
-                        </p>
-                        <p style={{ color: '#525252', fontSize: '0.8rem', marginTop: '0.25rem' }}>Possessions per 48m</p>
+                    {/* Tale of the Tape Grid */}
+                    <div style={{ backgroundColor: '#0A0A0A', padding: '1.5rem', borderRadius: '0.5rem', border: '1px solid #404040' }}>
+                        <p style={{ color: '#A3A3A3', fontSize: '0.85rem', fontWeight: 'bold', margin: '0 0 1.5rem 0', letterSpacing: '0.05em', textAlign: 'center' }}>ROLLING 10-GAME AVERAGES</p>
+                        
+                        {/* We use the custom StatRow component to do the heavy lifting here */}
+                        <StatRow label="Points" awayVal={prediction.metrics.away_stats.pts} homeVal={prediction.metrics.home_stats.pts} />
+                        <StatRow label="Rebounds" awayVal={prediction.metrics.away_stats.reb} homeVal={prediction.metrics.home_stats.reb} />
+                        <StatRow label="Assists" awayVal={prediction.metrics.away_stats.ast} homeVal={prediction.metrics.home_stats.ast} />
+                        <StatRow label="Turnovers" awayVal={prediction.metrics.away_stats.tov} homeVal={prediction.metrics.home_stats.tov} lowerIsBetter={true} />
+                        
+                        <div style={{ marginTop: '1.5rem', marginBottom: '0.5rem' }}></div>
+                        
+                        {/* V4 Math Specifics (Net Rating, Pace, etc.) */}
+                        <StatRow label="Offensive Rtg" awayVal={prediction.metrics.away_stats.ortg} homeVal={prediction.metrics.home_stats.ortg} />
+                        <StatRow label="Defensive Rtg" awayVal={prediction.metrics.away_stats.drtg} homeVal={prediction.metrics.home_stats.drtg} lowerIsBetter={true} />
+                        <StatRow label="Net Rating" awayVal={prediction.metrics.away_stats.net_rating} homeVal={prediction.metrics.home_stats.net_rating} isPlusMinus={true} />
+                        <StatRow label="Pace (Poss)" awayVal={prediction.metrics.away_stats.pace} homeVal={prediction.metrics.home_stats.pace} />
                     </div>
+
                 </div>
             )}
 

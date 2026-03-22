@@ -134,11 +134,61 @@ def get_prediction(matchup: Matchup):
         favorite = matchup.home if win_pct >= 50 else matchup.away
         fav_pct = win_pct if win_pct >= 50 else (100 - win_pct)
 
+        # My idea of futmob like stats on the side.
+        h2h_games = raw_df[
+            (
+                (raw_df["TEAM_ABBREVIATION"] == matchup.home)
+                & (raw_df["MATCHUP"].str.contains(matchup.away))
+            )
+            | (
+                (raw_df["TEAM_ABBREVIATION"] == matchup.away)
+                & (raw_df["MATCHUP"].str.contains(matchup.home))
+            )
+        ]
+
+        last_h2h_str = "No matchups yet this season"
+        if not h2h_games.empty:
+            last_game_id = h2h_games.iloc[-1]["GAME_ID"]
+            game_rows = raw_df[raw_df["GAME_ID"] == last_game_id]
+            if len(game_rows) == 2:
+                t1 = game_rows.iloc[0]
+                t2 = game_rows.iloc[1]
+                date_str = pd.to_datetime(t1["GAME_DATE"]).strftime("%b %d, %Y")
+                # Format: "WINNER 110 - 105 LOSER (Date)"
+                if t1["PTS"] > t2["PTS"]:
+                    last_h2h_str = f"{t1['TEAM_ABBREVIATION']} {int(t1['PTS'])} - {int(t2['PTS'])} {t2['TEAM_ABBREVIATION']} ({date_str})"
+                else:
+                    last_h2h_str = f"{t2['TEAM_ABBREVIATION']} {int(t2['PTS'])} - {int(t1['PTS'])} {t1['TEAM_ABBREVIATION']} ({date_str})"
+
+        # better representation of the data (if possible trying to do players and injurires too)
         return {
             "home_team": matchup.home,
             "away_team": matchup.away,
             "home_win_probability": win_pct,
             "message": f"The model heavily favors {favorite} with a {fav_pct:.1f}% probability of winning.",
+            "metrics": {
+                "last_h2h": last_h2h_str,
+                "away_stats": {
+                    "pts": float(away_stats.get("PTS", 0)),
+                    "reb": float(away_stats.get("REB", 0)),
+                    "ast": float(away_stats.get("AST", 0)),
+                    "tov": float(away_stats.get("TOV", 0)),
+                    "ortg": float(away_stats.get("ORTG", 0)),
+                    "drtg": float(away_stats.get("DRTG", 0)),
+                    "net_rating": float(away_stats.get("NET_RATING", 0)),
+                    "pace": float(away_stats.get("POSS", 0)),
+                },
+                "home_stats": {
+                    "pts": float(home_stats.get("PTS", 0)),
+                    "reb": float(home_stats.get("REB", 0)),
+                    "ast": float(home_stats.get("AST", 0)),
+                    "tov": float(home_stats.get("TOV", 0)),
+                    "ortg": float(home_stats.get("ORTG", 0)),
+                    "drtg": float(home_stats.get("DRTG", 0)),
+                    "net_rating": float(home_stats.get("NET_RATING", 0)),
+                    "pace": float(home_stats.get("POSS", 0)),
+                },
+            },
         }
 
     except Exception as e:
