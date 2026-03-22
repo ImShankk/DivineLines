@@ -171,6 +171,7 @@ def get_prediction(matchup: Matchup):
                 h2h_stats = {
                     "away": {
                         "pts": int(t_away["PTS"]),
+                        "opp_pts": int(t_home["PTS"]),
                         "reb": int(t_away["REB"]),
                         "ast": int(t_away["AST"]),
                         "fg3m": int(t_away["FG3M"]),
@@ -179,6 +180,7 @@ def get_prediction(matchup: Matchup):
                     },
                     "home": {
                         "pts": int(t_home["PTS"]),
+                        "opp_pts": int(t_away["PTS"]),
                         "reb": int(t_home["REB"]),
                         "ast": int(t_home["AST"]),
                         "fg3m": int(t_home["FG3M"]),
@@ -198,6 +200,8 @@ def get_prediction(matchup: Matchup):
                 "h2h_stats": h2h_stats,
                 "away_stats": {
                     "pts": float(away_stats.get("PTS", 0)),
+                    "opp_pts": float(away_stats.get("OPP_PTS", 0)),
+                    "fg3m": float(away_stats.get("FG3M", 0)),
                     "reb": float(away_stats.get("REB", 0)),
                     "ast": float(away_stats.get("AST", 0)),
                     "tov": float(away_stats.get("TOV", 0)),
@@ -208,6 +212,8 @@ def get_prediction(matchup: Matchup):
                 },
                 "home_stats": {
                     "pts": float(home_stats.get("PTS", 0)),
+                    "opp_pts": float(home_stats.get("OPP_PTS", 0)),
+                    "fg3m": float(home_stats.get("FG3M", 0)),
                     "reb": float(home_stats.get("REB", 0)),
                     "ast": float(home_stats.get("AST", 0)),
                     "tov": float(home_stats.get("TOV", 0)),

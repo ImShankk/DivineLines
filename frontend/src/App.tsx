@@ -91,7 +91,7 @@ function App() {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', letterSpacing: '-0.025em' }}>DivineLines V4</h1>
+          <h1 style={{ color: '#ffffff',fontSize: '2.5rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', letterSpacing: '-0.025em' }}>DivineLines V4</h1>
           <p style={{ color: '#A3A3A3', fontSize: '1.1rem' }}>Predictive Math & Matchup Engine</p>
         </div>
 
@@ -196,7 +196,7 @@ function App() {
 
                         {/* H2H Stats Grid */}
                         <StatHeader awayName={TEAM_NAMES[prediction.away_team]} homeName={TEAM_NAMES[prediction.home_team]} />
-                            
+                        
                         <StatRow label="Points" awayVal={prediction.metrics.h2h_stats.away.pts} homeVal={prediction.metrics.h2h_stats.home.pts} />
                         <StatRow label="Points Allowed" awayVal={prediction.metrics.h2h_stats.away.opp_pts} homeVal={prediction.metrics.h2h_stats.home.opp_pts} lowerIsBetter={true} />
                         <StatRow label="3PT Made" awayVal={prediction.metrics.h2h_stats.away.fg3m} homeVal={prediction.metrics.h2h_stats.home.fg3m} />
@@ -225,10 +225,6 @@ function App() {
                         <StatRow label="Rebounds" awayVal={prediction.metrics.away_stats.reb} homeVal={prediction.metrics.home_stats.reb} />
                         <StatRow label="Assists" awayVal={prediction.metrics.away_stats.ast} homeVal={prediction.metrics.home_stats.ast} />
                         <StatRow label="Turnovers" awayVal={prediction.metrics.away_stats.tov} homeVal={prediction.metrics.home_stats.tov} lowerIsBetter={true} />
-                        
-                        <div style={{ marginTop: '1.5rem', marginBottom: '0.5rem' }}></div>
-                        
-                        {/* V4 Math Specifics (Net Rating, Pace, etc.) */}
                         <StatRow label="Offensive Rtg" awayVal={prediction.metrics.away_stats.ortg} homeVal={prediction.metrics.home_stats.ortg} />
                         <StatRow label="Defensive Rtg" awayVal={prediction.metrics.away_stats.drtg} homeVal={prediction.metrics.home_stats.drtg} lowerIsBetter={true} />
                         <StatRow label="Net Rating" awayVal={prediction.metrics.away_stats.net_rating} homeVal={prediction.metrics.home_stats.net_rating} isPlusMinus={true} />
