@@ -182,7 +182,7 @@ function App() {
                 {showAdvanced ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
             </button>
 
-            {/* --- NEW: The Advanced Metrics Dropdown using the new Python payload --- */}
+            {/* The Advanced Metrics Dropdown using the new Python payload --- */}
             {showAdvanced && prediction.metrics && prediction.metrics.away_stats && (
                 <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #262626', textAlign: 'left' }}>
                     
