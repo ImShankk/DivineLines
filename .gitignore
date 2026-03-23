@@ -17,3 +17,7 @@ frontend/node_modules/
 frontend/dist/
 frontend/.env
 frontend/.eslintcache
+
+src/.env
+
+.env

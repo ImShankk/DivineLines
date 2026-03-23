@@ -173,6 +173,68 @@ function App() {
                 <strong style={{ color: '#FFFFFF' }}>Analysis: </strong> {prediction.message}
             </div>
 
+            {/* QUANT EDGE DASHBOARD  (i think it shows now*/}
+            {prediction.quant_edge ? (
+                <div style={{ backgroundColor: '#050505', border: '1px solid #404040', borderRadius: '0.5rem', padding: '1.5rem', marginBottom: '1.5rem', textAlign: 'left' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', paddingBottom: '0.75rem', borderBottom: '1px solid #262626' }}>
+                        <h3 style={{ margin: 0, fontSize: '0.9rem', color: '#A3A3A3', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                            LIVE VEGAS ODDS ({prediction.quant_edge.bookmaker})
+                        </h3>
+                    </div>
+                    
+                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+                        
+                        {/* Away Team Quant Stats */}
+                        <div style={{ flex: 1, padding: '1rem', backgroundColor: '#171717', borderRadius: '0.5rem', border: prediction.quant_edge.away_ev > 0 ? '1px solid #22C55E' : '1px solid #262626' }}>
+                            <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', color: '#E5E7EB' }}>{TEAM_NAMES[prediction.away_team]}</p>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3', marginBottom: '0.25rem' }}>
+                                <span>Moneyline:</span>
+                                <span style={{ color: '#FFFFFF' }}>{prediction.quant_edge.away_odds > 0 ? `+${prediction.quant_edge.away_odds}` : prediction.quant_edge.away_odds}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3', marginBottom: '0.25rem' }}>
+                                <span>Expected Value:</span>
+                                <span style={{ color: prediction.quant_edge.away_ev > 0 ? '#22C55E' : '#EF4444', fontWeight: 'bold' }}>
+                                    {prediction.quant_edge.away_ev > 0 ? `+$${prediction.quant_edge.away_ev}` : `-$${Math.abs(prediction.quant_edge.away_ev)}`}
+                                </span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3' }}>
+                                <span>Rec. Bet (Q-Kelly):</span>
+                                <span style={{ color: prediction.quant_edge.away_kelly > 0 ? '#22C55E' : '#737373' }}>
+                                    {prediction.quant_edge.away_kelly}% Bankroll
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Home Team Quant Stats */}
+                        <div style={{ flex: 1, padding: '1rem', backgroundColor: '#171717', borderRadius: '0.5rem', border: prediction.quant_edge.home_ev > 0 ? '1px solid #22C55E' : '1px solid #262626' }}>
+                            <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', color: '#E5E7EB' }}>{TEAM_NAMES[prediction.home_team]}</p>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3', marginBottom: '0.25rem' }}>
+                                <span>Moneyline:</span>
+                                <span style={{ color: '#FFFFFF' }}>{prediction.quant_edge.home_odds > 0 ? `+${prediction.quant_edge.home_odds}` : prediction.quant_edge.home_odds}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3', marginBottom: '0.25rem' }}>
+                                <span>Expected Value:</span>
+                                <span style={{ color: prediction.quant_edge.home_ev > 0 ? '#22C55E' : '#EF4444', fontWeight: 'bold' }}>
+                                    {prediction.quant_edge.home_ev > 0 ? `+$${prediction.quant_edge.home_ev}` : `-$${Math.abs(prediction.quant_edge.home_ev)}`}
+                                </span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3' }}>
+                                <span>Rec. Bet (Q-Kelly):</span>
+                                <span style={{ color: prediction.quant_edge.home_kelly > 0 ? '#22C55E' : '#737373' }}>
+                                    {prediction.quant_edge.home_kelly}% Bankroll
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            ) : (
+                <div style={{ backgroundColor: '#0A0A0A', border: '1px solid #262626', borderRadius: '0.5rem', padding: '1rem', marginBottom: '1.5rem', textAlign: 'center', color: '#737373', fontSize: '0.9rem' }}>
+                    Live Sportsbook Odds are currently unavailable for this matchup.
+                </div>
+            )}
+            {/*  */}
+
             <button 
                 onClick={() => setShowAdvanced(!showAdvanced)}
                 style={{ background: 'none', border: 'none', color: '#9CA3AF', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', fontWeight: '600' }}

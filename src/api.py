@@ -6,6 +6,10 @@ import sqlite3
 import pandas as pd
 import xgboost as xgb
 import os
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="DivineLines V4 Engine")
 
@@ -30,6 +34,98 @@ try:
     print("[SUCCESS] XGBoost Brain Loaded.")
 except Exception as e:
     print(f"[!] Warning: Could not load model. Ensure path is correct. {e}")
+
+ODDS_API_KEY = os.getenv("ODDS_API_KEY")
+
+if not ODDS_API_KEY:
+    print("[!] WARNING: ODDS_API_KEY not found in .env file!")
+
+# testing this first
+TEAM_DICTIONARY = {
+    "ATL": "Atlanta Hawks",
+    "BOS": "Boston Celtics",
+    "BKN": "Brooklyn Nets",
+    "CHA": "Charlotte Hornets",
+    "CHI": "Chicago Bulls",
+    "CLE": "Cleveland Cavaliers",
+    "DAL": "Dallas Mavericks",
+    "DEN": "Denver Nuggets",
+    "DET": "Detroit Pistons",
+    "GSW": "Golden State Warriors",
+    "HOU": "Houston Rockets",
+    "IND": "Indiana Pacers",
+    "LAC": "LA Clippers",
+    "LAL": "Los Angeles Lakers",
+    "MEM": "Memphis Grizzlies",
+    "MIA": "Miami Heat",
+    "MIL": "Milwaukee Bucks",
+    "MIN": "Minnesota Timberwolves",
+    "NOP": "New Orleans Pelicans",
+    "NYK": "New York Knicks",
+    "OKC": "Oklahoma City Thunder",
+    "ORL": "Orlando Magic",
+    "PHI": "Philadelphia 76ers",
+    "PHX": "Phoenix Suns",
+    "POR": "Portland Trail Blazers",
+    "SAC": "Sacramento Kings",
+    "SAS": "San Antonio Spurs",
+    "TOR": "Toronto Raptors",
+    "UTA": "Utah Jazz",
+    "WAS": "Washington Wizards",
+}
+
+
+def get_live_moneyline(home_abbr, away_abbr):
+    """Fetches real-time odds. Replace return with mock data to test UI tonight."""
+    if not ODDS_API_KEY:
+        return None
+
+    home_full = TEAM_DICTIONARY.get(home_abbr)
+    away_full = TEAM_DICTIONARY.get(away_abbr)
+
+    url = f"https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
+    params = {
+        "apiKey": ODDS_API_KEY,
+        "regions": "us",
+        "markets": "h2h",
+        "oddsFormat": "american",
+    }
+
+    try:
+        response = requests.get(url, params=params)
+        games = response.json()
+        for game in games:
+            if game["home_team"] == home_full and game["away_team"] == away_full:
+                bookmaker = game["bookmakers"][0]
+                outcomes = bookmaker["markets"][0]["outcomes"]
+                home_odds = next(
+                    item["price"] for item in outcomes if item["name"] == home_full
+                )
+                away_odds = next(
+                    item["price"] for item in outcomes if item["name"] == away_full
+                )
+                return {
+                    "home_odds": home_odds,
+                    "away_odds": away_odds,
+                    "bookmaker": bookmaker["title"],
+                }
+    except:
+        return None
+    return None
+
+
+def calculate_ev_and_kelly(prob_pct, american_odds):
+    prob_decimal = prob_pct / 100.0
+    dec_odds = (
+        (american_odds / 100.0 + 1)
+        if american_odds > 0
+        else (100.0 / abs(american_odds) + 1)
+    )
+
+    # This formula is according to Gemini's explanation of EV and Kelly Criterion for sports betting
+    ev = (prob_decimal * (dec_odds - 1) * 100) - ((1 - prob_decimal) * 100)
+    kelly = ((prob_decimal * dec_odds) - 1) / (dec_odds - 1)
+    return round(ev, 2), round(max(0, (kelly / 4) * 100), 2)
 
 
 @app.get("/")
@@ -134,6 +230,27 @@ def get_prediction(matchup: Matchup):
         favorite = matchup.home if win_pct >= 50 else matchup.away
         fav_pct = win_pct if win_pct >= 50 else (100 - win_pct)
 
+        live_odds = get_live_moneyline(matchup.home, matchup.away)
+        quant_edge = None
+
+        if live_odds:
+            home_ev, home_kelly = calculate_ev_and_kelly(
+                win_pct, live_odds["home_odds"]
+            )
+            away_ev, away_kelly = calculate_ev_and_kelly(
+                100 - win_pct, live_odds["away_odds"]
+            )
+
+            quant_edge = {
+                "bookmaker": live_odds["bookmaker"],
+                "home_odds": live_odds["home_odds"],
+                "away_odds": live_odds["away_odds"],
+                "home_ev": home_ev,
+                "home_kelly": home_kelly,
+                "away_ev": away_ev,
+                "away_kelly": away_kelly,
+            }
+
         # My idea of futmob like stats on the side.
         h2h_games = raw_df[
             (
@@ -189,12 +306,17 @@ def get_prediction(matchup: Matchup):
                     },
                 }
 
+        # incase Nan cuz of not enough games playued
+        def sanitize(val):
+            return float(val) if pd.notna(val) else 0.0
+
         # better representation of the data (if possible trying to do players and injurires too)
         return {
             "home_team": matchup.home,
             "away_team": matchup.away,
             "home_win_probability": win_pct,
             "message": f"The model heavily favors {favorite} with a {fav_pct:.1f}% probability of winning.",
+            "quant_edge": quant_edge,
             "metrics": {
                 "last_h2h": last_h2h_str,
                 "h2h_stats": h2h_stats,
