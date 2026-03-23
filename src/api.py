@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, params
 from pydantic import BaseModel
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
@@ -75,15 +75,38 @@ TEAM_DICTIONARY = {
 }
 
 
+# def get_live_moneyline(home_abbr, away_abbr):
+#     """Fetches real-time odds. Replace return with mock data to test UI tonight."""
+#     if not ODDS_API_KEY:
+#         return None
+
+#     home_full = TEAM_DICTIONARY.get(home_abbr)
+#     away_full = TEAM_DICTIONARY.get(away_abbr)
+
+#     url = f"https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
+#     params = {
+#         "apiKey": ODDS_API_KEY,
+#         "regions": "us",
+#         "markets": "h2h",
+#         "oddsFormat": "american",
+#     }
+
+
 def get_live_moneyline(home_abbr, away_abbr):
-    """Fetches real-time odds. Replace return with mock data to test UI tonight."""
-    if not ODDS_API_KEY:
-        return None
+    """Temporary Hardcode for Testing the React Dashboard"""
 
     home_full = TEAM_DICTIONARY.get(home_abbr)
     away_full = TEAM_DICTIONARY.get(away_abbr)
-
     url = f"https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
+
+    # TEST: Dallas vs Golden State
+    if home_abbr == "DAL" and away_abbr == "GSW":
+        return {"home_odds": -125, "away_odds": 105, "bookmaker": "CoolBet"}
+
+    # If it's not the test matchup, try the real API
+    if not ODDS_API_KEY:
+        return None
+
     params = {
         "apiKey": ODDS_API_KEY,
         "regions": "us",
