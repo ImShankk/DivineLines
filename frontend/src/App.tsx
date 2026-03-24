@@ -198,9 +198,11 @@ function App() {
                                 </span>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3' }}>
-                                <span>Rec. Bet (Q-Kelly):</span>
+                                <span>Recommended Bet:</span>
                                 <span style={{ color: prediction.quant_edge.away_kelly > 0 ? '#22C55E' : '#737373' }}>
-                                    {prediction.quant_edge.away_kelly}% Bankroll
+                                    {prediction.quant_edge.away_kelly > 0 
+                                      ? `$${((prediction.quant_edge.away_kelly / 100) * 60 * 10).toFixed(2)}` 
+                                      : "$0.00"}
                                 </span>
                             </div>
                         </div>
@@ -219,9 +221,11 @@ function App() {
                                 </span>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#A3A3A3' }}>
-                                <span>Rec. Bet (Q-Kelly):</span>
+                                <span>Recommended Bet: </span>
                                 <span style={{ color: prediction.quant_edge.home_kelly > 0 ? '#22C55E' : '#737373' }}>
-                                    {prediction.quant_edge.home_kelly}% Bankroll
+                                    {prediction.quant_edge.home_kelly > 0 
+                                      ? `$${((prediction.quant_edge.home_kelly / 100) * 60 * 10).toFixed(2)}` 
+                                      : "$0.00"}
                                 </span>
                             </div>
                         </div>
