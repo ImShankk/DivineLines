@@ -54,7 +54,7 @@ TEAM_DICTIONARY = {
     "GSW": "Golden State Warriors",
     "HOU": "Houston Rockets",
     "IND": "Indiana Pacers",
-    "LAC": "LA Clippers",
+    "LAC": "Los Angeles Clippers",
     "LAL": "Los Angeles Lakers",
     "MEM": "Memphis Grizzlies",
     "MIA": "Miami Heat",
@@ -118,21 +118,69 @@ def get_live_moneyline(home_abbr, away_abbr):
     try:
         response = requests.get(url, params=params)
         games = response.json()
+
+        # testing this cuz its not working rn
+        print(f"\n Searching for: {away_full} @ {home_full}")
+        if isinstance(games, dict) and "message" in games:
+            print(f"[!] API Error: {games['message']}")
+            return None
+
+        available_matchups = [
+            f"{g.get('away_team')} @ {g.get('home_team')}" for g in games
+        ]
+        print(f"API Currently Has: {available_matchups}\n")
+
         for game in games:
-            if game["home_team"] == home_full and game["away_team"] == away_full:
-                bookmaker = game["bookmakers"][0]
-                outcomes = bookmaker["markets"][0]["outcomes"]
-                home_odds = next(
-                    item["price"] for item in outcomes if item["name"] == home_full
-                )
-                away_odds = next(
-                    item["price"] for item in outcomes if item["name"] == away_full
-                )
-                return {
-                    "home_odds": home_odds,
-                    "away_odds": away_odds,
-                    "bookmaker": bookmaker["title"],
-                }
+
+            # Making sure if they are actually inthe same game
+            home_api = game.get("home_team", "")
+            away_api = game.get("away_team", "")
+
+            # Extracts the last word (e.g., 'Clippers' from 'Los Angeles Clippers')
+            home_nick = home_full.split()[-1]
+            away_nick = away_full.split()[-1]
+
+            match_found = (home_nick in home_api and away_nick in away_api) or (
+                home_nick in away_api and away_nick in home_api
+            )
+
+            if match_found:
+                if not game.get("bookmakers"):
+                    continue
+                for bookmaker in game["bookmakers"]:
+                    try:
+                        outcomes = bookmaker["markets"][0]["outcomes"]
+                        home_odds = next(
+                            item["price"]
+                            for item in outcomes
+                            if item["name"] == home_full
+                        )
+                        away_odds = next(
+                            item["price"]
+                            for item in outcomes
+                            if item["name"] == away_full
+                        )
+                        return {
+                            "home_odds": home_odds,
+                            "away_odds": away_odds,
+                            "bookmaker": bookmaker["title"],
+                        }
+                    except (IndexError, StopIteration):
+                        continue
+                # if game["home_team"] == home_full and game["away_team"] == away_full:
+                #     bookmaker = game["bookmakers"][0]
+                #     outcomes = bookmaker["markets"][0]["outcomes"]
+                #     home_odds = next(
+                #         item["price"] for item in outcomes if item["name"] == home_full
+                #     )
+                #     away_odds = next(
+                #         item["price"] for item in outcomes if item["name"] == away_full
+                #     )
+                #     return {
+                #         "home_odds": home_odds,
+                #         "away_odds": away_odds,
+                #         "bookmaker": bookmaker["title"],
+                #     }
     except:
         return None
     return None
@@ -345,28 +393,28 @@ def get_prediction(matchup: Matchup):
                 "last_h2h": last_h2h_str,
                 "h2h_stats": h2h_stats,
                 "away_stats": {
-                    "pts": float(away_stats.get("PTS", 0)),
-                    "opp_pts": float(away_stats.get("OPP_PTS", 0)),
-                    "fg3m": float(away_stats.get("FG3M", 0)),
-                    "reb": float(away_stats.get("REB", 0)),
-                    "ast": float(away_stats.get("AST", 0)),
-                    "tov": float(away_stats.get("TOV", 0)),
-                    "ortg": float(away_stats.get("ORTG", 0)),
-                    "drtg": float(away_stats.get("DRTG", 0)),
-                    "net_rating": float(away_stats.get("NET_RATING", 0)),
-                    "pace": float(away_stats.get("POSS", 0)),
+                    "pts": sanitize(away_stats.get("PTS")),
+                    "opp_pts": sanitize(away_stats.get("OPP_PTS")),
+                    "fg3m": sanitize(away_stats.get("FG3M")),
+                    "reb": sanitize(away_stats.get("REB")),
+                    "ast": sanitize(away_stats.get("AST")),
+                    "tov": sanitize(away_stats.get("TOV")),
+                    "ortg": sanitize(away_stats.get("ORTG")),
+                    "drtg": sanitize(away_stats.get("DRTG")),
+                    "net_rating": sanitize(away_stats.get("NET_RATING")),
+                    "pace": sanitize(away_stats.get("POSS")),
                 },
                 "home_stats": {
-                    "pts": float(home_stats.get("PTS", 0)),
-                    "opp_pts": float(home_stats.get("OPP_PTS", 0)),
-                    "fg3m": float(home_stats.get("FG3M", 0)),
-                    "reb": float(home_stats.get("REB", 0)),
-                    "ast": float(home_stats.get("AST", 0)),
-                    "tov": float(home_stats.get("TOV", 0)),
-                    "ortg": float(home_stats.get("ORTG", 0)),
-                    "drtg": float(home_stats.get("DRTG", 0)),
-                    "net_rating": float(home_stats.get("NET_RATING", 0)),
-                    "pace": float(home_stats.get("POSS", 0)),
+                    "pts": sanitize(home_stats.get("PTS")),
+                    "opp_pts": sanitize(home_stats.get("OPP_PTS")),
+                    "fg3m": sanitize(home_stats.get("FG3M")),
+                    "reb": sanitize(home_stats.get("REB")),
+                    "ast": sanitize(home_stats.get("AST")),
+                    "tov": sanitize(home_stats.get("TOV")),
+                    "ortg": sanitize(home_stats.get("ORTG")),
+                    "drtg": sanitize(home_stats.get("DRTG")),
+                    "net_rating": sanitize(home_stats.get("NET_RATING")),
+                    "pace": sanitize(home_stats.get("POSS")),
                 },
             },
         }
