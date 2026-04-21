@@ -6,7 +6,7 @@ import time
 import sys
 
 try:
-    from syncData import sync_database
+    from core.syncData import sync_database
 except ImportError:
     pass
 
