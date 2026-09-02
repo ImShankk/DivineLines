@@ -1,0 +1,5610 @@
+{
+ "header": {
+  "id": "740604",
+  "season": {
+   "year": 2025,
+   "current": false,
+   "type": 13481,
+   "name": "2025-26 English Premier League"
+  },
+  "league": {
+   "name": "English Premier League"
+  },
+  "competitions": [
+   {
+    "id": "740604",
+    "date": "2025-08-17T15:30Z",
+    "neutralSite": false,
+    "status": {
+     "type": {
+      "id": "28",
+      "name": "STATUS_FULL_TIME",
+      "state": "post",
+      "completed": true,
+      "description": "Full Time",
+      "detail": "FT",
+      "shortDetail": "FT"
+     }
+    },
+    "competitors": [
+     {
+      "id": "360",
+      "homeAway": "home",
+      "winner": false,
+      "score": "0",
+      "linescores": [
+       {
+        "displayValue": "0"
+       },
+       {
+        "displayValue": "0"
+       }
+      ],
+      "record": [
+       {
+        "type": "total",
+        "summary": "0-0-1",
+        "displayValue": "0-0-1"
+       },
+       {
+        "type": "points",
+        "summary": "0",
+        "displayValue": "0"
+       }
+      ],
+      "team": {
+       "id": "360",
+       "displayName": "Manchester United",
+       "abbreviation": "MAN",
+       "color": "da020e",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png"
+        }
+       ],
+       "form": "WWDWW"
+      }
+     },
+     {
+      "id": "359",
+      "homeAway": "away",
+      "winner": true,
+      "score": "1",
+      "linescores": [
+       {
+        "displayValue": "1"
+       },
+       {
+        "displayValue": "0"
+       }
+      ],
+      "record": [
+       {
+        "type": "total",
+        "summary": "1-0-0",
+        "displayValue": "1-0-0"
+       },
+       {
+        "type": "points",
+        "summary": "3",
+        "displayValue": "3"
+       }
+      ],
+      "team": {
+       "id": "359",
+       "displayName": "Arsenal",
+       "abbreviation": "ARS",
+       "color": "e20520",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png"
+        }
+       ],
+       "form": "WWLWW"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "gameInfo": {
+  "venue": {
+   "id": "250",
+   "guid": "c074bcd5-7465-318c-9828-a8228f8346d0",
+   "fullName": "Old Trafford",
+   "address": {
+    "city": "Manchester",
+    "country": "England"
+   },
+   "images": []
+  },
+  "attendance": 73475,
+  "officials": [
+   {
+    "fullName": "Simon Hooper",
+    "displayName": "Simon Hooper",
+    "order": 1
+   }
+  ]
+ },
+ "boxscore": {
+  "teams": [
+   {
+    "team": {
+     "id": "360",
+     "displayName": "Manchester United",
+     "abbreviation": "MAN",
+     "color": "da020e",
+     "form": null
+    },
+    "homeAway": "home",
+    "statistics": [
+     {
+      "name": "foulsCommitted",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "10"
+     },
+     {
+      "name": "yellowCards",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "1"
+     },
+     {
+      "name": "redCards",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "offsides",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "1"
+     },
+     {
+      "name": "wonCorners",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "3"
+     },
+     {
+      "name": "saves",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "2"
+     },
+     {
+      "name": "possessionPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "61.1"
+     },
+     {
+      "name": "totalShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "22"
+     },
+     {
+      "name": "shotsOnTarget",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "7"
+     },
+     {
+      "name": "shotPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.3"
+     },
+     {
+      "name": "penaltyKickGoals",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "penaltyKickShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "accuratePasses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "393"
+     },
+     {
+      "name": "totalPasses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "475"
+     },
+     {
+      "name": "passPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.8"
+     },
+     {
+      "name": "accurateCrosses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "3"
+     },
+     {
+      "name": "totalCrosses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "15"
+     },
+     {
+      "name": "crossPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.2"
+     },
+     {
+      "name": "totalLongBalls",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "67"
+     },
+     {
+      "name": "accurateLongBalls",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "41"
+     },
+     {
+      "name": "longballPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.6"
+     },
+     {
+      "name": "blockedShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "8"
+     },
+     {
+      "name": "effectiveTackles",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "11"
+     },
+     {
+      "name": "totalTackles",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "22"
+     },
+     {
+      "name": "tacklePct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.5"
+     },
+     {
+      "name": "interceptions",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "4"
+     },
+     {
+      "name": "effectiveClearance",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "23"
+     },
+     {
+      "name": "totalClearance",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "23"
+     }
+    ]
+   },
+   {
+    "team": {
+     "id": "359",
+     "displayName": "Arsenal",
+     "abbreviation": "ARS",
+     "color": "e20520",
+     "form": null
+    },
+    "homeAway": "away",
+    "statistics": [
+     {
+      "name": "foulsCommitted",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "19"
+     },
+     {
+      "name": "yellowCards",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "4"
+     },
+     {
+      "name": "redCards",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "offsides",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "2"
+     },
+     {
+      "name": "wonCorners",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "4"
+     },
+     {
+      "name": "saves",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "7"
+     },
+     {
+      "name": "possessionPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "38.9"
+     },
+     {
+      "name": "totalShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "9"
+     },
+     {
+      "name": "shotsOnTarget",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "3"
+     },
+     {
+      "name": "shotPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.3"
+     },
+     {
+      "name": "penaltyKickGoals",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "penaltyKickShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0"
+     },
+     {
+      "name": "accuratePasses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "219"
+     },
+     {
+      "name": "totalPasses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "294"
+     },
+     {
+      "name": "passPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.7"
+     },
+     {
+      "name": "accurateCrosses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "2"
+     },
+     {
+      "name": "totalCrosses",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "11"
+     },
+     {
+      "name": "crossPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.2"
+     },
+     {
+      "name": "totalLongBalls",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "49"
+     },
+     {
+      "name": "accurateLongBalls",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "20"
+     },
+     {
+      "name": "longballPct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.4"
+     },
+     {
+      "name": "blockedShots",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "3"
+     },
+     {
+      "name": "effectiveTackles",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "10"
+     },
+     {
+      "name": "totalTackles",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "18"
+     },
+     {
+      "name": "tacklePct",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "0.6"
+     },
+     {
+      "name": "interceptions",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "4"
+     },
+     {
+      "name": "effectiveClearance",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "30"
+     },
+     {
+      "name": "totalClearance",
+      "abbreviation": null,
+      "value": null,
+      "displayValue": "30"
+     }
+    ]
+   }
+  ]
+ },
+ "rosters": [
+  {
+   "homeAway": "home",
+   "winner": false,
+   "team": {
+    "id": "360",
+    "displayName": "Manchester United",
+    "abbreviation": "MAN",
+    "color": "da020e",
+    "form": null
+   },
+   "formation": "3-4-2-1",
+   "roster": [
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "1",
+     "athlete": {
+      "id": "274272",
+      "displayName": "Altay Bayindir",
+      "fullName": "Altay Bayindir"
+     },
+     "position": {
+      "name": "Goalkeeper",
+      "displayName": "Goalkeeper",
+      "abbreviation": "G"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "1",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "saves",
+       "abbreviation": "SV",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "4",
+     "athlete": {
+      "id": "239349",
+      "displayName": "Matthijs de Ligt",
+      "fullName": "Matthijs de Ligt"
+     },
+     "position": {
+      "name": "Center Defender",
+      "displayName": "Center Defender",
+      "abbreviation": "CD"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "5",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 3.0,
+       "displayValue": "3"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "23",
+     "athlete": {
+      "id": "167127",
+      "displayName": "Luke Shaw",
+      "fullName": "Luke Shaw"
+     },
+     "position": {
+      "name": "Center Left Defender",
+      "displayName": "Center Left Defender",
+      "abbreviation": "CD-L"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "4",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "15",
+     "athlete": {
+      "id": "340206",
+      "displayName": "Leny Yoro",
+      "fullName": "Leny Yoro"
+     },
+     "position": {
+      "name": "Center Right Defender",
+      "displayName": "Center Right Defender",
+      "abbreviation": "CD-R"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "6",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "8",
+     "athlete": {
+      "id": "124091",
+      "displayName": "Bruno Fernandes",
+      "fullName": "Bruno Fernandes"
+     },
+     "position": {
+      "name": "Center Left Midfielder",
+      "displayName": "Center Left Midfielder",
+      "abbreviation": "CM-L"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "8",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 2.0,
+       "displayValue": "2"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "18",
+     "athlete": {
+      "id": "173666",
+      "displayName": "Casemiro",
+      "fullName": "Casemiro"
+     },
+     "position": {
+      "name": "Center Right Midfielder",
+      "displayName": "Center Right Midfielder",
+      "abbreviation": "CM-R"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "7",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "13",
+     "athlete": {
+      "id": "366781",
+      "displayName": "Patrick Dorgu",
+      "fullName": "Patrick Dorgu"
+     },
+     "position": {
+      "name": "Left Midfielder",
+      "displayName": "Left Midfielder",
+      "abbreviation": "LM"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "3",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 4.0,
+       "displayValue": "4"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 2.0,
+       "displayValue": "2"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "2",
+     "athlete": {
+      "id": "238902",
+      "displayName": "Diogo Dalot",
+      "fullName": "Diogo Dalot"
+     },
+     "position": {
+      "name": "Right Midfielder",
+      "displayName": "Right Midfielder",
+      "abbreviation": "RM"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "2",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "10",
+     "athlete": {
+      "id": "259902",
+      "displayName": "Matheus Cunha",
+      "fullName": "Matheus Cunha"
+     },
+     "position": {
+      "name": "Forward",
+      "displayName": "Forward",
+      "abbreviation": "F"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "9",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 3.0,
+       "displayValue": "3"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 3.0,
+       "displayValue": "3"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 4.0,
+       "displayValue": "4"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "7",
+     "athlete": {
+      "id": "231167",
+      "displayName": "Mason Mount",
+      "fullName": "Mason Mount"
+     },
+     "position": {
+      "name": "Center Left Forward",
+      "displayName": "Center Left Forward",
+      "abbreviation": "CF-L"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "11",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 2.0,
+       "displayValue": "2"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "19",
+     "athlete": {
+      "id": "271170",
+      "displayName": "Bryan Mbeumo",
+      "fullName": "Bryan Mbeumo"
+     },
+     "position": {
+      "name": "Center Right Forward",
+      "displayName": "Center Right Forward",
+      "abbreviation": "CF-R"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "10",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 3.0,
+       "displayValue": "3"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 5.0,
+       "displayValue": "5"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "11",
+     "athlete": {
+      "id": "276327",
+      "displayName": "Joshua Zirkzee",
+      "fullName": "Joshua Zirkzee"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "30",
+     "athlete": {
+      "id": "289155",
+      "displayName": "Benjamin Sesko",
+      "fullName": "Benjamin Sesko"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": true,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 2.0,
+       "displayValue": "2"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "25",
+     "athlete": {
+      "id": "241468",
+      "displayName": "Manuel Ugarte",
+      "fullName": "Manuel Ugarte"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": true,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 1.0,
+       "displayValue": "1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "homeAway": "away",
+   "winner": true,
+   "team": {
+    "id": "359",
+    "displayName": "Arsenal",
+    "abbreviation": "ARS",
+    "color": "e20520",
+    "form": null
+   },
+   "formation": "4-3-3",
+   "roster": [
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "1",
+     "athlete": {
+      "id": "196176",
+      "displayName": "David Raya",
+      "fullName": "David Raya"
+     },
+     "position": {
+      "name": "Goalkeeper",
+      "displayName": "Goalkeeper",
+      "abbreviation": "G"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "1",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "saves",
+       "abbreviation": "SV",
+       "value": 7.0,
+       "displayValue": "7"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "6",
+     "athlete": {
+      "id": "236322",
+      "displayName": "Gabriel Magalhães",
+      "fullName": "Gabriel Magalhães"
+     },
+     "position": {
+      "name": "Center Left Defender",
+      "displayName": "Center Left Defender",
+      "abbreviation": "CD-L"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "6",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "2",
+     "athlete": {
+      "id": "277385",
+      "displayName": "William Saliba",
+      "fullName": "William Saliba"
+     },
+     "position": {
+      "name": "Center Right Defender",
+      "displayName": "Center Right Defender",
+      "abbreviation": "CD-R"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "5",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "33",
+     "athlete": {
+      "id": "298329",
+      "displayName": "Riccardo Calafiori",
+      "fullName": "Riccardo Calafiori"
+     },
+     "position": {
+      "name": "Left Back",
+      "displayName": "Left Back",
+      "abbreviation": "LB"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "3",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 1.0,
+       "displayValue": "1"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "4",
+     "athlete": {
+      "id": "241077",
+      "displayName": "Ben White",
+      "fullName": "Ben White"
+     },
+     "position": {
+      "name": "Right Back",
+      "displayName": "Right Back",
+      "abbreviation": "RB"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "2",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 1.0,
+       "displayValue": "1"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "36",
+     "athlete": {
+      "id": "287266",
+      "displayName": "Martín Zubimendi",
+      "fullName": "Martín Zubimendi"
+     },
+     "position": {
+      "name": "Center Midfielder",
+      "displayName": "Center Midfielder",
+      "abbreviation": "CM"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "4",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "41",
+     "athlete": {
+      "id": "238262",
+      "displayName": "Declan Rice",
+      "fullName": "Declan Rice"
+     },
+     "position": {
+      "name": "Left Midfielder",
+      "displayName": "Left Midfielder",
+      "abbreviation": "LM"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "8",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 3.0,
+       "displayValue": "3"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "8",
+     "athlete": {
+      "id": "203669",
+      "displayName": "Martin Ødegaard",
+      "fullName": "Martin Ødegaard"
+     },
+     "position": {
+      "name": "Right Midfielder",
+      "displayName": "Right Midfielder",
+      "abbreviation": "RM"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "7",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 2.0,
+       "displayValue": "2"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "14",
+     "athlete": {
+      "id": "258906",
+      "displayName": "Viktor Gyökeres",
+      "fullName": "Viktor Gyökeres"
+     },
+     "position": {
+      "name": "Forward",
+      "displayName": "Forward",
+      "abbreviation": "F"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "9",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 3.0,
+       "displayValue": "3"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 2.0,
+       "displayValue": "2"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "11",
+     "athlete": {
+      "id": "269844",
+      "displayName": "Gabriel Martinelli",
+      "fullName": "Gabriel Martinelli"
+     },
+     "position": {
+      "name": "Left Forward",
+      "displayName": "Left Forward",
+      "abbreviation": "LF"
+     },
+     "subbedIn": false,
+     "subbedOut": true,
+     "formationPlace": "11",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 1.0,
+       "displayValue": "1"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": true,
+     "jersey": "7",
+     "athlete": {
+      "id": "280555",
+      "displayName": "Bukayo Saka",
+      "fullName": "Bukayo Saka"
+     },
+     "position": {
+      "name": "Right Forward",
+      "displayName": "Right Forward",
+      "abbreviation": "RF"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "10",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 1.0,
+       "displayValue": "1"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "19",
+     "athlete": {
+      "id": "174980",
+      "displayName": "Leandro Trossard",
+      "fullName": "Leandro Trossard"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "3",
+     "athlete": {
+      "id": "328497",
+      "displayName": "Cristhian Mosquera",
+      "fullName": "Cristhian Mosquera"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": false,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    },
+    {
+     "active": true,
+     "starter": false,
+     "jersey": "23",
+     "athlete": {
+      "id": "209581",
+      "displayName": "Mikel Merino",
+      "fullName": "Mikel Merino"
+     },
+     "position": {
+      "name": "Substitute",
+      "displayName": "Substitute",
+      "abbreviation": "SUB"
+     },
+     "subbedIn": true,
+     "subbedOut": false,
+     "formationPlace": "0",
+     "stats": [
+      {
+       "name": "appearances",
+       "abbreviation": "APP",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsCommitted",
+       "abbreviation": "FC",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "foulsSuffered",
+       "abbreviation": "FA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "ownGoals",
+       "abbreviation": "OG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "redCards",
+       "abbreviation": "RC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "subIns",
+       "abbreviation": "SUB",
+       "value": 1.0,
+       "displayValue": "1"
+      },
+      {
+       "name": "yellowCards",
+       "abbreviation": "YC",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalsConceded",
+       "abbreviation": "GA",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsFaced",
+       "abbreviation": "SHF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "goalAssists",
+       "abbreviation": "A",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "offsides",
+       "abbreviation": "OF",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "shotsOnTarget",
+       "abbreviation": "SOG",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalGoals",
+       "abbreviation": "G",
+       "value": 0.0,
+       "displayValue": "0"
+      },
+      {
+       "name": "totalShots",
+       "abbreviation": "SHOT",
+       "value": 0.0,
+       "displayValue": "0"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "commentary": [
+  {
+   "sequence": 2,
+   "time": {
+    "value": 216.0,
+    "displayValue": "4'"
+   },
+   "play": {
+    "id": "45687167",
+    "type": {
+     "id": "66",
+     "text": "Foul",
+     "type": "foul"
+    },
+    "text": "Patrick Dorgu (Manchester United) wins a free kick on the left wing.",
+    "shortText": "Ben White Foul",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 216.0,
+     "displayValue": "4'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Ben White"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Patrick Dorgu"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:34:26Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.552,
+    "fieldPositionY": 0.051,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 4,
+   "time": {
+    "value": 345.0,
+    "displayValue": "6'"
+   },
+   "play": {
+    "id": "45687185",
+    "type": {
+     "id": "106",
+     "text": "Shot On Target",
+     "type": "shot-on-target"
+    },
+    "text": "Attempt saved. Bryan Mbeumo (Manchester United) right footed shot from the centre of the box is saved in the bottom right corner by David Raya (Arsenal). Assisted by Mason Mount with a through ball.",
+    "shortText": "Bryan Mbeumo Shot On Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 345.0,
+     "displayValue": "6'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Bryan Mbeumo"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Mason Mount"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:36:35Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.26,
+    "fieldPositionY": 0.624,
+    "fieldPosition2X": 0.044,
+    "fieldPosition2Y": 0.532
+   }
+  },
+  {
+   "sequence": 5,
+   "time": {
+    "value": 363.0,
+    "displayValue": "7'"
+   },
+   "play": {
+    "id": "45687226",
+    "type": {
+     "id": "66",
+     "text": "Foul",
+     "type": "foul"
+    },
+    "text": "Foul by Martin Ødegaard (Arsenal).",
+    "shortText": "Martin Ødegaard Foul",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 363.0,
+     "displayValue": "7'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Martin Ødegaard"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Bruno Fernandes"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:36:52Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.922,
+    "fieldPositionY": 0.452,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 7,
+   "time": {
+    "value": 396.0,
+    "displayValue": "7'"
+   },
+   "play": {
+    "id": "45687228",
+    "type": {
+     "id": "66",
+     "text": "Foul",
+     "type": "foul"
+    },
+    "text": "Matheus Cunha (Manchester United) wins a free kick in the attacking half.",
+    "shortText": "Martín Zubimendi Foul",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 396.0,
+     "displayValue": "7'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Martín Zubimendi"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Matheus Cunha"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:37:25Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.828,
+    "fieldPositionY": 0.688,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 9,
+   "time": {
+    "value": 440.0,
+    "displayValue": "8'"
+   },
+   "play": {
+    "id": "45687230",
+    "type": {
+     "id": "117",
+     "text": "Shot Off Target",
+     "type": "shot-off-target"
+    },
+    "text": "Attempt missed. Patrick Dorgu (Manchester United) left footed shot from outside the box misses to the right. Assisted by Bruno Fernandes following a set piece situation.",
+    "shortText": "Patrick Dorgu Shot Off Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 440.0,
+     "displayValue": "8'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Patrick Dorgu"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Bruno Fernandes"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:38:09Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.642,
+    "fieldPositionY": 0.483,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.655
+   }
+  },
+  {
+   "sequence": 10,
+   "time": {
+    "value": 477.0,
+    "displayValue": "8'"
+   },
+   "play": {
+    "id": "45687402",
+    "type": {
+     "id": "66",
+     "text": "Foul",
+     "type": "foul"
+    },
+    "text": "Patrick Dorgu (Manchester United) wins a free kick in the attacking half.",
+    "shortText": "William Saliba Foul",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 477.0,
+     "displayValue": "8'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "William Saliba"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Patrick Dorgu"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:38:47Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.894,
+    "fieldPositionY": 0.282,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 13,
+   "time": {
+    "value": 713.0,
+    "displayValue": "12'"
+   },
+   "play": {
+    "id": "45687474",
+    "type": {
+     "id": "95",
+     "text": "Corner Awarded",
+     "type": "corner-awarded"
+    },
+    "text": "Corner, Arsenal. Conceded by Matthijs de Ligt.",
+    "shortText": "Matthijs de Ligt Corner Kick",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 714.0,
+     "displayValue": "12'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Matthijs de Ligt"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:42:42Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.072,
+    "fieldPositionY": 0.323,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 14,
+   "time": {
+    "value": 762.0,
+    "displayValue": "13'"
+   },
+   "play": {
+    "id": "45687498",
+    "type": {
+     "id": "137",
+     "text": "Goal - Header",
+     "type": "goal---header"
+    },
+    "text": "Goal! Manchester United 0, Arsenal 1. Riccardo Calafiori (Arsenal) header from very close range to the bottom right corner following a corner.",
+    "shortText": "Riccardo Calafiori Goal - Header",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 762.0,
+     "displayValue": "13'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Riccardo Calafiori"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:43:32Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.01,
+    "fieldPositionY": 0.528,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.523
+   }
+  },
+  {
+   "sequence": 17,
+   "time": {
+    "value": 1005.0,
+    "displayValue": "17'"
+   },
+   "play": {
+    "id": "45687615",
+    "type": {
+     "id": "135",
+     "text": "Shot Blocked",
+     "type": "shot-blocked"
+    },
+    "text": "Attempt blocked. Bruno Fernandes (Manchester United) right footed shot from outside the box is blocked.",
+    "shortText": "Bruno Fernandes Shot Blocked",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1005.0,
+     "displayValue": "17'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Bruno Fernandes"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:47:34Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.38,
+    "fieldPositionY": 0.627,
+    "fieldPosition2X": 0.224,
+    "fieldPosition2Y": 0.567
+   }
+  },
+  {
+   "sequence": 24,
+   "time": {
+    "value": 1202.0,
+    "displayValue": "21'"
+   },
+   "play": {
+    "id": "45687646",
+    "type": {
+     "id": "68",
+     "text": "Offside",
+     "type": "offside"
+    },
+    "text": "Offside, Arsenal. Riccardo Calafiori is caught offside.",
+    "shortText": "Gabriel Martinelli Offside",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1202.0,
+     "displayValue": "21'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Gabriel Martinelli"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:50:51Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.908,
+    "fieldPositionY": 0.06,
+    "fieldPosition2X": 0.726,
+    "fieldPosition2Y": 0.246
+   }
+  },
+  {
+   "sequence": 25,
+   "time": {
+    "value": 1455.0,
+    "displayValue": "25'"
+   },
+   "play": {
+    "id": "45687728",
+    "type": {
+     "id": "135",
+     "text": "Shot Blocked",
+     "type": "shot-blocked"
+    },
+    "text": "Attempt blocked. Bryan Mbeumo (Manchester United) left footed shot from outside the box is blocked. Assisted by Casemiro.",
+    "shortText": "Bryan Mbeumo Shot Blocked",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1455.0,
+     "displayValue": "25'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Bryan Mbeumo"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Casemiro"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:55:04Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.352,
+    "fieldPositionY": 0.617,
+    "fieldPosition2X": 0.276,
+    "fieldPosition2Y": 0.592
+   }
+  },
+  {
+   "sequence": 26,
+   "time": {
+    "value": 1457.0,
+    "displayValue": "25'"
+   },
+   "play": {
+    "id": "45687701",
+    "type": {
+     "id": "95",
+     "text": "Corner Awarded",
+     "type": "corner-awarded"
+    },
+    "text": "Corner, Manchester United. Conceded by Gabriel Magalhães.",
+    "shortText": "Gabriel Magalhães Corner Kick",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1459.0,
+     "displayValue": "25'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Gabriel Magalhães"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:55:06Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.326,
+    "fieldPositionY": 0.614,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 27,
+   "time": {
+    "value": 1553.0,
+    "displayValue": "26'"
+   },
+   "play": {
+    "id": "45687729",
+    "type": {
+     "id": "106",
+     "text": "Shot On Target",
+     "type": "shot-on-target"
+    },
+    "text": "Attempt saved. Gabriel Martinelli (Arsenal) right footed shot from the left side of the box is saved in the centre of the goal by Altay Bayindir (Manchester United). Assisted by Bukayo Saka.",
+    "shortText": "Gabriel Martinelli Shot On Targe",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1553.0,
+     "displayValue": "26'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Gabriel Martinelli"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Bukayo Saka"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:56:42Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.26,
+    "fieldPositionY": 0.307,
+    "fieldPosition2X": 0.024,
+    "fieldPosition2Y": 0.475
+   }
+  },
+  {
+   "sequence": 30,
+   "time": {
+    "value": 1604.0,
+    "displayValue": "27'"
+   },
+   "play": {
+    "id": "45687776",
+    "type": {
+     "id": "68",
+     "text": "Offside",
+     "type": "offside"
+    },
+    "text": "Offside, Manchester United. Diogo Dalot is caught offside.",
+    "shortText": "Bryan Mbeumo Offside",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1604.0,
+     "displayValue": "27'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Bryan Mbeumo"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T15:57:33Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.47,
+    "fieldPositionY": 0.712,
+    "fieldPosition2X": 0.142,
+    "fieldPosition2Y": 0.717
+   }
+  },
+  {
+   "sequence": 32,
+   "time": {
+    "value": 1925.0,
+    "displayValue": "33'"
+   },
+   "play": {
+    "id": "45687848",
+    "type": {
+     "id": "106",
+     "text": "Shot On Target",
+     "type": "shot-on-target"
+    },
+    "text": "Attempt saved. Matheus Cunha (Manchester United) right footed shot from the centre of the box is saved in the centre of the goal by David Raya (Arsenal). Assisted by Diogo Dalot.",
+    "shortText": "Matheus Cunha Shot On Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 1925.0,
+     "displayValue": "33'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Matheus Cunha"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Diogo Dalot"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:02:54Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.338,
+    "fieldPositionY": 0.63,
+    "fieldPosition2X": 0.032,
+    "fieldPosition2Y": 0.513
+   }
+  },
+  {
+   "sequence": 33,
+   "time": {
+    "value": 2006.0,
+    "displayValue": "34'"
+   },
+   "play": {
+    "id": "45687905",
+    "type": {
+     "id": "106",
+     "text": "Shot On Target",
+     "type": "shot-on-target"
+    },
+    "text": "Attempt saved. Matheus Cunha (Manchester United) right footed shot from outside the box is saved in the centre of the goal by David Raya (Arsenal). Assisted by Bryan Mbeumo.",
+    "shortText": "Matheus Cunha Shot On Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2006.0,
+     "displayValue": "34'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Matheus Cunha"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Bryan Mbeumo"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:04:15Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.502,
+    "fieldPositionY": 0.44,
+    "fieldPosition2X": 0.04,
+    "fieldPosition2Y": 0.495
+   }
+  },
+  {
+   "sequence": 35,
+   "time": {
+    "value": 2131.0,
+    "displayValue": "36'"
+   },
+   "play": {
+    "id": "45687935",
+    "type": {
+     "id": "68",
+     "text": "Offside",
+     "type": "offside"
+    },
+    "text": "Offside, Arsenal. Viktor Gyökeres is caught offside.",
+    "shortText": "Martin Ødegaard Offside",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2131.0,
+     "displayValue": "36'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Martin Ødegaard"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:06:20Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.77,
+    "fieldPositionY": 0.411,
+    "fieldPosition2X": 0.518,
+    "fieldPosition2Y": 0.34
+   }
+  },
+  {
+   "sequence": 37,
+   "time": {
+    "value": 2269.0,
+    "displayValue": "38'"
+   },
+   "play": {
+    "id": "45688017",
+    "type": {
+     "id": "135",
+     "text": "Shot Blocked",
+     "type": "shot-blocked"
+    },
+    "text": "Attempt blocked. Bruno Fernandes (Manchester United) left footed shot from the centre of the box is blocked.",
+    "shortText": "Bruno Fernandes Shot Blocked",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2269.0,
+     "displayValue": "38'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Bruno Fernandes"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:08:38Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.3,
+    "fieldPositionY": 0.434,
+    "fieldPosition2X": 0.284,
+    "fieldPosition2Y": 0.439
+   }
+  },
+  {
+   "sequence": 43,
+   "time": {
+    "value": 2448.0,
+    "displayValue": "41'"
+   },
+   "play": {
+    "id": "45688161",
+    "type": {
+     "id": "117",
+     "text": "Shot Off Target",
+     "type": "shot-off-target"
+    },
+    "text": "Attempt missed. Martin Ødegaard (Arsenal) left footed shot from the centre of the box misses to the left following a corner.",
+    "shortText": "Martin Ødegaard Shot Off Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2448.0,
+     "displayValue": "41'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Martin Ødegaard"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:11:37Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 44,
+   "time": {
+    "value": 2451.0,
+    "displayValue": "41'"
+   },
+   "play": {
+    "id": "45688118",
+    "type": {
+     "id": "117",
+     "text": "Shot Off Target",
+     "type": "shot-off-target"
+    },
+    "text": "Attempt missed. Ben White (Arsenal) right footed shot from outside the box misses to the left following a corner.",
+    "shortText": "Ben White Shot Off Target",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2451.0,
+     "displayValue": "41'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Ben White"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:11:40Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 47,
+   "time": {
+    "value": 2503.0,
+    "displayValue": "42'"
+   },
+   "play": {
+    "id": "45688090",
+    "type": {
+     "id": "94",
+     "text": "Yellow Card",
+     "type": "yellow-card"
+    },
+    "text": "Riccardo Calafiori (Arsenal) is shown the yellow card for a bad foul.",
+    "shortText": "Riccardo Calafiori Yellow Card",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2503.0,
+     "displayValue": "42'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Riccardo Calafiori"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:12:32Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 48,
+   "time": {
+    "value": 2593.0,
+    "displayValue": "44'"
+   },
+   "play": {
+    "id": "45688125",
+    "type": {
+     "id": "135",
+     "text": "Shot Blocked",
+     "type": "shot-blocked"
+    },
+    "text": "Attempt blocked. Mason Mount (Manchester United) right footed shot from the centre of the box is blocked. Assisted by Matheus Cunha.",
+    "shortText": "Mason Mount Shot Blocked",
+    "period": {
+     "number": 1
+    },
+    "clock": {
+     "value": 2593.0,
+     "displayValue": "44'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Mason Mount"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Matheus Cunha"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:14:02Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.266,
+    "fieldPositionY": 0.375,
+    "fieldPosition2X": 0.24,
+    "fieldPosition2Y": 0.388
+   }
+  },
+  {
+   "sequence": 51,
+   "time": {
+    "value": 2700.0,
+    "displayValue": "45'"
+   },
+   "play": {
+    "id": "45688545",
+    "type": {
+     "id": "82",
+     "text": "Start 2nd Half",
+     "type": "start-2nd-half"
+    },
+    "text": "Second Half begins Manchester United 0, Arsenal 1.",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 2700.0,
+     "displayValue": "45'"
+    },
+    "wallclock": "2025-08-17T16:32:38Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 65,
+   "time": {
+    "value": 3264.0,
+    "displayValue": "55'"
+   },
+   "play": {
+    "id": "45688791",
+    "type": {
+     "id": "76",
+     "text": "Substitution",
+     "type": "substitution"
+    },
+    "text": "Substitution, Manchester United. Amad Diallo replaces Diogo Dalot.",
+    "shortText": "Amad Substitution",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 3264.0,
+     "displayValue": "55'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Amad Diallo"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Diogo Dalot"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:42:03Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 68,
+   "time": {
+    "value": 3538.0,
+    "displayValue": "59'"
+   },
+   "play": {
+    "id": "45688934",
+    "type": {
+     "id": "117",
+     "text": "Shot Off Target",
+     "type": "shot-off-target"
+    },
+    "text": "Attempt missed. Declan Rice (Arsenal) right footed shot from outside the box is too high. Assisted by Gabriel Martinelli.",
+    "shortText": "Declan Rice Shot Off Target",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 3538.0,
+     "displayValue": "59'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Declan Rice"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Gabriel Martinelli"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:46:37Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.452,
+    "fieldPositionY": 0.481,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.509
+   }
+  },
+  {
+   "sequence": 69,
+   "time": {
+    "value": 3570.0,
+    "displayValue": "60'"
+   },
+   "play": {
+    "id": "45688999",
+    "type": {
+     "id": "76",
+     "text": "Substitution",
+     "type": "substitution"
+    },
+    "text": "Substitution, Arsenal. Kai Havertz replaces Viktor Gyökeres.",
+    "shortText": "Kai Havertz Substitution",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 3570.0,
+     "displayValue": "60'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Kai Havertz"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Viktor Gyökeres"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:47:09Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 70,
+   "time": {
+    "value": 3582.0,
+    "displayValue": "60'"
+   },
+   "play": {
+    "id": "45689000",
+    "type": {
+     "id": "76",
+     "text": "Substitution",
+     "type": "substitution"
+    },
+    "text": "Substitution, Arsenal. Noni Madueke replaces Gabriel Martinelli.",
+    "shortText": "Noni Madueke Substitution",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 3582.0,
+     "displayValue": "60'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Noni Madueke"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Gabriel Martinelli"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:47:21Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 74,
+   "time": {
+    "value": 3852.0,
+    "displayValue": "65'"
+   },
+   "play": {
+    "id": "45689087",
+    "type": {
+     "id": "76",
+     "text": "Substitution",
+     "type": "substitution"
+    },
+    "text": "Substitution, Manchester United. Manuel Ugarte replaces Casemiro.",
+    "shortText": "Manuel Ugarte Substitution",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 3852.0,
+     "displayValue": "65'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Manuel Ugarte"
+      }
+     },
+     {
+      "athlete": {
+       "displayName": "Casemiro"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T16:51:50Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 95,
+   "time": {
+    "value": 4904.0,
+    "displayValue": "82'"
+   },
+   "play": {
+    "id": "45689677",
+    "type": {
+     "id": "95",
+     "text": "Corner Awarded",
+     "type": "corner-awarded"
+    },
+    "text": "Corner, Arsenal. Conceded by Patrick Dorgu.",
+    "shortText": "Harry Maguire Corner Kick",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 4907.0,
+     "displayValue": "82'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Harry Maguire"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T17:09:22Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.26,
+    "fieldPositionY": 0.591,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 101,
+   "time": {
+    "value": 5067.0,
+    "displayValue": "85'"
+   },
+   "play": {
+    "id": "45689779",
+    "type": {
+     "id": "94",
+     "text": "Yellow Card",
+     "type": "yellow-card"
+    },
+    "text": "Patrick Dorgu (Manchester United) is shown the yellow card for a bad foul.",
+    "shortText": "Patrick Dorgu Yellow Card",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 5067.0,
+     "displayValue": "85'"
+    },
+    "team": {
+     "displayName": "Manchester United"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Patrick Dorgu"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T17:12:05Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 102,
+   "time": {
+    "value": 5099.0,
+    "displayValue": "85'"
+   },
+   "play": {
+    "id": "45689780",
+    "type": {
+     "id": "94",
+     "text": "Yellow Card",
+     "type": "yellow-card"
+    },
+    "text": "David Raya (Arsenal) is shown the yellow card.",
+    "shortText": "David Raya Yellow Card",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 5099.0,
+     "displayValue": "85'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "David Raya"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T17:12:38Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 109,
+   "time": {
+    "value": 5400.0,
+    "displayValue": "90'+1'"
+   },
+   "play": {
+    "id": "45689877",
+    "type": {
+     "id": "94",
+     "text": "Yellow Card",
+     "type": "yellow-card"
+    },
+    "text": "Jurriën Timber (Arsenal) is shown the yellow card.",
+    "shortText": "Jurriën Timber Yellow Card",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 5400.0,
+     "displayValue": "90'+1'"
+    },
+    "team": {
+     "displayName": "Arsenal"
+    },
+    "participants": [
+     {
+      "athlete": {
+       "displayName": "Jurriën Timber"
+      }
+     }
+    ],
+    "wallclock": "2025-08-17T17:17:42Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  },
+  {
+   "sequence": 121,
+   "time": {
+    "value": 5400.0,
+    "displayValue": "90'+7'"
+   },
+   "play": {
+    "id": "45690027",
+    "type": {
+     "id": "83",
+     "text": "End Regular Time",
+     "type": "end-regular-time"
+    },
+    "text": "Second Half ends, Manchester United 0, Arsenal 1.",
+    "period": {
+     "number": 2
+    },
+    "clock": {
+     "value": 5400.0,
+     "displayValue": "90'+7'"
+    },
+    "wallclock": "2025-08-17T17:23:54Z",
+    "goalPositionX": 0.0,
+    "goalPositionY": 0.0,
+    "fieldPositionX": 0.0,
+    "fieldPositionY": 0.0,
+    "fieldPosition2X": 0.0,
+    "fieldPosition2Y": 0.0
+   }
+  }
+ ],
+ "keyEvents": [
+  {
+   "id": "45687050",
+   "type": {
+    "id": "80",
+    "text": "Kickoff",
+    "type": "kickoff"
+   },
+   "period": {
+    "number": 1
+   },
+   "clock": {
+    "value": 0.0,
+    "displayValue": ""
+   },
+   "scoringPlay": false,
+   "wallclock": "2025-08-17T15:30:49Z",
+   "shootout": false,
+   "goalPositionX": 0.0,
+   "goalPositionY": 0.0,
+   "fieldPositionX": 0.0,
+   "fieldPositionY": 0.0,
+   "fieldPosition2X": 0.0,
+   "fieldPosition2Y": 0.0
+  },
+  {
+   "id": "45687498",
+   "type": {
+    "id": "137",
+    "text": "Goal - Header",
+    "type": "goal---header"
+   },
+   "text": "Goal! Manchester United 0, Arsenal 1. Riccardo Calafiori (Arsenal) header from very close range to the bottom right corner following a corner.",
+   "shortText": "Riccardo Calafiori Goal - Header",
+   "period": {
+    "number": 1
+   },
+   "clock": {
+    "value": 762.0,
+    "displayValue": "13'"
+   },
+   "scoringPlay": true,
+   "team": {
+    "id": "359",
+    "displayName": "Arsenal"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "298329",
+      "displayName": "Riccardo Calafiori"
+     }
+    }
+   ],
+   "wallclock": "2025-08-17T15:43:32Z",
+   "shootout": false,
+   "goalPositionX": 0.0,
+   "goalPositionY": 0.0,
+   "fieldPositionX": 0.01,
+   "fieldPositionY": 0.528,
+   "fieldPosition2X": 0.0,
+   "fieldPosition2Y": 0.523
+  },
+  {
+   "id": "45688192",
+   "type": {
+    "id": "81",
+    "text": "Halftime",
+    "type": "halftime"
+   },
+   "period": {
+    "number": 1
+   },
+   "clock": {
+    "value": 2700.0,
+    "displayValue": "45'+2'"
+   },
+   "scoringPlay": false,
+   "wallclock": "2025-08-17T16:16:55Z",
+   "shootout": false,
+   "goalPositionX": 0.0,
+   "goalPositionY": 0.0,
+   "fieldPositionX": 0.0,
+   "fieldPositionY": 0.0,
+   "fieldPosition2X": 0.0,
+   "fieldPosition2Y": 0.0
+  },
+  {
+   "id": "45688545",
+   "type": {
+    "id": "82",
+    "text": "Start 2nd Half",
+    "type": "start-2nd-half"
+   },
+   "text": "Second Half begins Manchester United 0, Arsenal 1.",
+   "period": {
+    "number": 2
+   },
+   "clock": {
+    "value": 2700.0,
+    "displayValue": "45'"
+   },
+   "scoringPlay": false,
+   "wallclock": "2025-08-17T16:32:38Z",
+   "shootout": false,
+   "goalPositionX": 0.0,
+   "goalPositionY": 0.0,
+   "fieldPositionX": 0.0,
+   "fieldPositionY": 0.0,
+   "fieldPosition2X": 0.0,
+   "fieldPosition2Y": 0.0
+  },
+  {
+   "id": "45690027",
+   "type": {
+    "id": "83",
+    "text": "End Regular Time",
+    "type": "end-regular-time"
+   },
+   "text": "Second Half ends, Manchester United 0, Arsenal 1.",
+   "period": {
+    "number": 2
+   },
+   "clock": {
+    "value": 5400.0,
+    "displayValue": "90'+7'"
+   },
+   "scoringPlay": false,
+   "wallclock": "2025-08-17T17:23:54Z",
+   "shootout": false,
+   "goalPositionX": 0.0,
+   "goalPositionY": 0.0,
+   "fieldPositionX": 0.0,
+   "fieldPositionY": 0.0,
+   "fieldPosition2X": 0.0,
+   "fieldPosition2Y": 0.0
+  }
+ ],
+ "standings": {
+  "groups": [
+   {
+    "header": "English Premier League Standings",
+    "standings": {
+     "entries": [
+      {
+       "team": "AFC Bournemouth",
+       "link": "https://www.espn.com/soccer/club/_/id/349/afc-bournemouth",
+       "id": "349",
+       "uid": "s:600~t:349",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 1.0,
+         "displayValue": "1"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2019-05-08T16:07Z"
+        }
+       ]
+      },
+      {
+       "team": "Arsenal",
+       "link": "https://www.espn.com/soccer/club/_/id/359/arsenal",
+       "id": "359",
+       "uid": "s:600~t:359",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 2.0,
+         "displayValue": "2"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2019-05-08T16:07Z"
+        }
+       ]
+      },
+      {
+       "team": "Aston Villa",
+       "link": "https://www.espn.com/soccer/club/_/id/362/aston-villa",
+       "id": "362",
+       "uid": "s:600~t:362",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 3.0,
+         "displayValue": "3"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2025-03-21T13:31Z"
+        }
+       ]
+      },
+      {
+       "team": "Brentford",
+       "link": "https://www.espn.com/soccer/club/_/id/337/brentford",
+       "id": "337",
+       "uid": "s:600~t:337",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 4.0,
+         "displayValue": "4"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/337.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2020-07-16T16:13Z"
+        }
+       ]
+      },
+      {
+       "team": "Brighton & Hove Albion",
+       "link": "https://www.espn.com/soccer/club/_/id/331/brighton-hove-albion",
+       "id": "331",
+       "uid": "s:600~t:331",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 5.0,
+         "displayValue": "5"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-01-04T17:49Z"
+        }
+       ]
+      },
+      {
+       "team": "Chelsea",
+       "link": "https://www.espn.com/soccer/club/_/id/363/chelsea",
+       "id": "363",
+       "uid": "s:600~t:363",
+       "stats": [
+        {
+         "name": "gamesPlayed",
+         "displayName": "Games Played",
+         "shortDisplayName": "GP",
+         "description": "Number of Games Played",
+         "abbreviation": "GP",
+         "type": "gamesplayed",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "losses",
+         "displayName": "Losses",
+         "shortDisplayName": "L",
+         "description": "Losses",
+         "abbreviation": "L",
+         "type": "losses",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "pointDifferential",
+         "displayName": "Goal Difference",
+         "shortDisplayName": "GD",
+         "description": "Goal Difference",
+         "abbreviation": "GD",
+         "type": "pointdifferential",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "points",
+         "displayName": "Points",
+         "shortDisplayName": "P",
+         "description": "Points",
+         "abbreviation": "P",
+         "type": "points",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "ties",
+         "displayName": "Draws",
+         "shortDisplayName": "D",
+         "description": "Draws",
+         "abbreviation": "D",
+         "type": "ties",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "wins",
+         "displayName": "Wins",
+         "shortDisplayName": "W",
+         "description": "Wins",
+         "abbreviation": "W",
+         "type": "wins",
+         "value": 0.0,
+         "displayValue": "0"
+        },
+        {
+         "name": "rank",
+         "displayName": "Rank",
+         "shortDisplayName": "Rank",
+         "description": "Rank",
+         "abbreviation": "R",
+         "type": "rank",
+         "value": 6.0,
+         "displayValue": "6"
+        },
+        {
+         "id": "0",
+         "name": "overall",
+         "abbreviation": "Total",
+         "displayName": "Overall",
+         "shortDisplayName": "OVER",
+         "description": "Overall Record",
+         "type": "total",
+         "summary": "0-0-0",
+         "displayValue": "0-0-0"
+        }
+       ],
+       "logo": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2019-05-08T16:07Z"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ]
+ }
+}
