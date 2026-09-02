@@ -1,23 +1,32 @@
 __pycache__/
 *.pyc
 *.pyo
-.env
+*.egg-info/
 venv/
 .venv/
 env/
 
+# Secrets — never commit
+.env
+frontend/.env
+src/.env
+
+# Generated data: the canonical database, caches, logs and model artifacts are
+# all rebuildable with `divinelines migrate && divinelines refresh && divinelines train`.
+data/divinelines.db
+data/divinelines.db-wal
+data/divinelines.db-shm
+data/cache/
+data/logs/
+data/artifacts/
+data/raw/
+data/processed/*.sqlite3
+
 .DS_Store
 Thumbs.db
-
-data/raw/
-data/processed/*.db
-data/processed/*.sqlite3
+.pytest_cache/
+.coverage
 
 frontend/node_modules/
 frontend/dist/
-frontend/.env
 frontend/.eslintcache
-
-src/.env
-
-.env

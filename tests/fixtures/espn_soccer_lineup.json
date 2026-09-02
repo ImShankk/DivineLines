@@ -1,0 +1,386 @@
+{
+ "rosters": [
+  {
+   "team": {
+    "displayName": "Burnley"
+   },
+   "homeAway": "home",
+   "formation": "4-2-3-1",
+   "roster": [
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "1",
+     "position": {
+      "abbreviation": "G",
+      "displayName": "Goalkeeper"
+     },
+     "athlete": {
+      "id": "329987",
+      "displayName": "Max Wei\u00df"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "6",
+     "position": {
+      "abbreviation": "CD-L",
+      "displayName": "Center Left Defender"
+     },
+     "athlete": {
+      "id": "318316",
+      "displayName": "Maxime Est\u00e8ve"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "5",
+     "position": {
+      "abbreviation": "CD-R",
+      "displayName": "Center Right Defender"
+     },
+     "athlete": {
+      "id": "229524",
+      "displayName": "Axel Tuanzebe"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "3",
+     "position": {
+      "abbreviation": "LB",
+      "displayName": "Left Back"
+     },
+     "athlete": {
+      "id": "285790",
+      "displayName": "Lucas Pires"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "2",
+     "position": {
+      "abbreviation": "RB",
+      "displayName": "Right Back"
+     },
+     "athlete": {
+      "id": "129358",
+      "displayName": "Kyle Walker"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "10",
+     "position": {
+      "abbreviation": "AM",
+      "displayName": "Attacking Midfielder"
+     },
+     "athlete": {
+      "id": "300007",
+      "displayName": "Hannibal Mejbri"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "4",
+     "position": {
+      "abbreviation": "LM",
+      "displayName": "Left Midfielder"
+     },
+     "athlete": {
+      "id": "309563",
+      "displayName": "Lesley Ugochukwu"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "8",
+     "position": {
+      "abbreviation": "RM",
+      "displayName": "Right Midfielder"
+     },
+     "athlete": {
+      "id": "256607",
+      "displayName": "Florentino"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "9",
+     "position": {
+      "abbreviation": "F",
+      "displayName": "Forward"
+     },
+     "athlete": {
+      "id": "261598",
+      "displayName": "Zian Flemming"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "11",
+     "position": {
+      "abbreviation": "AM-L",
+      "displayName": "Attacking Midfielder Left"
+     },
+     "athlete": {
+      "id": "307657",
+      "displayName": "Jaidon Anthony"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "7",
+     "position": {
+      "abbreviation": "AM-R",
+      "displayName": "Attacking Midfielder Right"
+     },
+     "athlete": {
+      "id": "324541",
+      "displayName": "Loum Tchaouna"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": false,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "346210",
+      "displayName": "Quilindschy Hartman"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": true,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "190936",
+      "displayName": "Josh Laurent"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": true,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "163111",
+      "displayName": "James Ward-Prowse"
+     }
+    }
+   ]
+  },
+  {
+   "team": {
+    "displayName": "Aston Villa"
+   },
+   "homeAway": "away",
+   "formation": "4-2-3-1",
+   "roster": [
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "1",
+     "position": {
+      "abbreviation": "G",
+      "displayName": "Goalkeeper"
+     },
+     "athlete": {
+      "id": "158626",
+      "displayName": "Emiliano Mart\u00ednez"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "6",
+     "position": {
+      "abbreviation": "CD-L",
+      "displayName": "Center Left Defender"
+     },
+     "athlete": {
+      "id": "181312",
+      "displayName": "Tyrone Mings"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "5",
+     "position": {
+      "abbreviation": "CD-R",
+      "displayName": "Center Right Defender"
+     },
+     "athlete": {
+      "id": "231859",
+      "displayName": "Ezri Konsa"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "3",
+     "position": {
+      "abbreviation": "LB",
+      "displayName": "Left Back"
+     },
+     "athlete": {
+      "id": "281125",
+      "displayName": "Ian Maatsen"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "2",
+     "position": {
+      "abbreviation": "RB",
+      "displayName": "Right Back"
+     },
+     "athlete": {
+      "id": "234698",
+      "displayName": "Matty Cash"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "10",
+     "position": {
+      "abbreviation": "AM",
+      "displayName": "Attacking Midfielder"
+     },
+     "athlete": {
+      "id": "152469",
+      "displayName": "Ross Barkley"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "4",
+     "position": {
+      "abbreviation": "LM",
+      "displayName": "Left Midfielder"
+     },
+     "athlete": {
+      "id": "193297",
+      "displayName": "Youri Tielemans"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "8",
+     "position": {
+      "abbreviation": "RM",
+      "displayName": "Right Midfielder"
+     },
+     "athlete": {
+      "id": "204679",
+      "displayName": "Victor Lindel\u00f6f"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "9",
+     "position": {
+      "abbreviation": "F",
+      "displayName": "Forward"
+     },
+     "athlete": {
+      "id": "198825",
+      "displayName": "Ollie Watkins"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "11",
+     "position": {
+      "abbreviation": "AM-L",
+      "displayName": "Attacking Midfielder Left"
+     },
+     "athlete": {
+      "id": "265653",
+      "displayName": "Morgan Rogers"
+     }
+    },
+    {
+     "starter": true,
+     "subbedIn": false,
+     "formationPlace": "7",
+     "position": {
+      "abbreviation": "AM-R",
+      "displayName": "Attacking Midfielder Right"
+     },
+     "athlete": {
+      "id": "162843",
+      "displayName": "John McGinn"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": false,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "132233",
+      "displayName": "Marco Bizot"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": true,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "310607",
+      "displayName": "Lamare Bogarde"
+     }
+    },
+    {
+     "starter": false,
+     "subbedIn": true,
+     "formationPlace": "0",
+     "position": {
+      "abbreviation": "SUB",
+      "displayName": "Substitute"
+     },
+     "athlete": {
+      "id": "214375",
+      "displayName": "Emiliano Buend\u00eda"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -26,95 +26,151 @@ def extract_node(data, target_key):
     return None
 
 
+def parse_fotmob_player_stats(stats_arr, name, team_name, match_id):
+    """
+    Standardizes stat extraction with defensive type-checking to prevent crashes
+    when FotMob alternates between dictionary and raw string values.
+    """
+    minutes, shots, sot, xg, xa, chances = 0, 0, 0, 0, 0, 0
+    passes = "0/0"
+
+    if not isinstance(stats_arr, list):
+        return {}  # Failsafe if payload is entirely malformed
+
+    def extract_val(obj):
+        """Safely extracts value whether it is nested in a dict or a raw string/int."""
+        if isinstance(obj, dict):
+            return obj.get("value", 0)
+        return obj
+
+    for category in stats_arr:
+        if not isinstance(category, dict):
+            continue
+
+        cat_stats = category.get("stats", {})
+
+        # Parsing Logic 1: Dictionary format
+        if isinstance(cat_stats, dict):
+            if "Minutes played" in cat_stats:
+                minutes = extract_val(cat_stats["Minutes played"])
+            if "Total shots" in cat_stats:
+                shots = extract_val(cat_stats["Total shots"])
+            if "Shots on target" in cat_stats:
+                sot = extract_val(cat_stats["Shots on target"])
+            if "Expected goals (xG)" in cat_stats:
+                xg = extract_val(cat_stats["Expected goals (xG)"])
+            if "Expected assists (xA)" in cat_stats:
+                xa = extract_val(cat_stats["Expected assists (xA)"])
+            if "Chances created" in cat_stats:
+                chances = extract_val(cat_stats["Chances created"])
+            if "Accurate passes" in cat_stats:
+                passes = extract_val(cat_stats["Accurate passes"])
+
+        # Parsing Logic 2: Array of objects format (Common in MLS)
+        elif isinstance(cat_stats, list):
+            for stat in cat_stats:
+                if isinstance(stat, dict):
+                    title = stat.get("title", "")
+                    val = stat.get("value", 0)
+                    if title == "Minutes played":
+                        minutes = val
+                    elif title == "Total shots":
+                        shots = val
+                    elif title == "Shots on target":
+                        sot = val
+                    elif title == "Expected goals (xG)":
+                        xg = val
+                    elif title == "Expected assists (xA)":
+                        xa = val
+                    elif title == "Chances created":
+                        chances = val
+                    elif title == "Accurate passes":
+                        passes = val
+
+    return {
+        "name": name,
+        "team": team_name,
+        "fotmob_match_id": match_id,
+        "minutes_played": minutes,
+        "shots": shots,
+        "sot": sot,
+        "xg": xg,
+        "xa": xa,
+        "chances_created": chances,
+        "passes": passes,
+    }
+
+
 def scrape_fotmob_match(match_id):
     """
-    Retrieves Opta attacking statistics via Headless Browser.
-    Bounces off the main frontend to clear Cloudflare before hitting the API.
+    Retrieves attacking statistics via Headless Browser by extracting the
+    hydration payload directly from the DOM, handling both Opta and non-Opta leagues.
     """
-    api_url = f"https://www.fotmob.com/api/matchDetails?matchId={match_id}"
+    url = f"https://www.fotmob.com/matches/{match_id}/match"
 
     try:
         with sync_playwright() as p:
-            # Adding standard user agent to avoid basic bot detection
             browser = p.chromium.launch(headless=True)
-            context = browser.new_context(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-            )
-            page = context.new_page()
+            page = browser.new_page()
+            page.goto(url, wait_until="domcontentloaded")
 
-            # 1. Navigate to the homepage to establish a trusted Cloudflare session
-            page.goto("https://www.fotmob.com", wait_until="domcontentloaded")
-
-            # 2. Navigate to the raw API endpoint using the cleared session
-            page.goto(api_url, wait_until="domcontentloaded")
-
-            # Extract JSON directly from the browser body
-            raw_json = page.locator("body").inner_text()
-            data = json.loads(raw_json)
+            script_text = page.locator("#__NEXT_DATA__").inner_text()
+            raw_json = json.loads(script_text)
             browser.close()
-
-        # Validate that the API returned the expected stats payload
-        if "content" not in data or "playerStats" not in data.get("content", {}):
-            print(f"Error: 'playerStats' missing from Match {match_id} payload.")
-            return pd.DataFrame()
 
         player_stats = []
 
-        for team in ["home", "away"]:
-            players = data["content"]["playerStats"].get(team, [])
+        # Hunt for either the premium Opta stats or the standard lineup stats
+        lineup_node = extract_node(raw_json, "lineup")
+        player_stats_node = extract_node(raw_json, "playerStats")
 
-            team_name = "Unknown"
-            if (
-                "matchFacts" in data.get("content", {})
-                and "info" in data["content"]["matchFacts"]
-            ):
-                team_name = (
-                    data["content"]["matchFacts"]["info"]
-                    .get(team + "Team", {})
-                    .get("name", "Unknown")
-                )
+        if not lineup_node and not player_stats_node:
+            print(f"Error: No statistical data found for Match {match_id}.")
+            return pd.DataFrame()
 
-            for player in players:
-                stats_arr = player.get("stats", [])
+        # Extract team names for identification
+        team_names = {"home": "Unknown", "away": "Unknown"}
+        match_facts_node = extract_node(raw_json, "matchFacts")
+        if match_facts_node and "matchFacts" in match_facts_node:
+            info = match_facts_node["matchFacts"].get("info", {})
+            team_names["home"] = info.get("homeTeam", {}).get("name", "Unknown")
+            team_names["away"] = info.get("awayTeam", {}).get("name", "Unknown")
 
-                minutes = 0
-                shots = 0
-                sot = 0
-                xg = 0
-                xa = 0
-                chances = 0
-                passes = "0/0"
+        # Parsing Logic 1: Opta Games (Premier League, Champions League, etc.)
+        if player_stats_node and "playerStats" in player_stats_node:
+            for team in ["home", "away"]:
+                players = player_stats_node["playerStats"].get(team, [])
+                for player in players:
+                    p_data = parse_fotmob_player_stats(
+                        player.get("stats", []),
+                        player.get("name", "Unknown"),
+                        team_names[team],
+                        match_id,
+                    )
+                    player_stats.append(p_data)
 
-                for category in stats_arr:
-                    cat_stats = category.get("stats", {})
-                    if "Minutes played" in cat_stats:
-                        minutes = cat_stats["Minutes played"].get("value", 0)
-                    if "Total shots" in cat_stats:
-                        shots = cat_stats["Total shots"].get("value", 0)
-                    if "Shots on target" in cat_stats:
-                        sot = cat_stats["Shots on target"].get("value", 0)
-                    if "Expected goals (xG)" in cat_stats:
-                        xg = cat_stats["Expected goals (xG)"].get("value", 0)
-                    if "Expected assists (xA)" in cat_stats:
-                        xa = cat_stats["Expected assists (xA)"].get("value", 0)
-                    if "Chances created" in cat_stats:
-                        chances = cat_stats["Chances created"].get("value", 0)
-                    if "Accurate passes" in cat_stats:
-                        passes = cat_stats["Accurate passes"].get("value", "0/0")
+        # Parsing Logic 2: Non-Opta Games (MLS, Internationals, Lower Leagues)
+        elif lineup_node and "lineup" in lineup_node:
+            teams = lineup_node["lineup"].get("lineup", [])
+            for team_data in teams:
+                team_name = team_data.get("teamName", "Unknown")
 
-                p_data = {
-                    "name": player.get("name", "Unknown"),
-                    "team": team_name,
-                    "fotmob_match_id": match_id,
-                    "minutes_played": minutes,
-                    "shots": shots,
-                    "sot": sot,
-                    "xg": xg,
-                    "xa": xa,
-                    "chances_created": chances,
-                    "passes": passes,
-                }
-                player_stats.append(p_data)
+                # Extract starters
+                for row in team_data.get("players", []):
+                    for player in row:
+                        name = player.get("name", {}).get("fullName", "Unknown")
+                        p_data = parse_fotmob_player_stats(
+                            player.get("stats", []), name, team_name, match_id
+                        )
+                        player_stats.append(p_data)
+
+                # Extract bench players
+                for player in team_data.get("bench", []):
+                    name = player.get("name", {}).get("fullName", "Unknown")
+                    p_data = parse_fotmob_player_stats(
+                        player.get("stats", []), name, team_name, match_id
+                    )
+                    player_stats.append(p_data)
 
         return pd.DataFrame(player_stats)
     except Exception as e:

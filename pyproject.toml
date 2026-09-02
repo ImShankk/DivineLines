@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "divinelines"
+version = "3.0.0"
+description = "Quantitative sports research: prediction, market analysis, CLV and model health for NBA and soccer"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+dependencies = [
+    # Core data and modelling
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",           # Dixon-Coles MLE, Poisson scoreline distribution
+    "scikit-learn>=1.4",     # logistic baseline, isotonic/Platt calibration
+    "xgboost>=2.0",
+    "joblib>=1.3",           # model artifact serialisation for the registry
+
+    # Service layer
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "pydantic>=2.6",
+    "python-dotenv>=1.0",
+
+    # Data sources
+    "requests>=2.31",
+    "nba_api>=1.4",          # stats.nba.com box scores and advanced player stats
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+]
+
+[project.scripts]
+divinelines = "divinelines.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["divinelines*"]
+
+[tool.setuptools.package-data]
+divinelines = ["db/*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning:xgboost.*",
+]
